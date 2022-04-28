@@ -18,7 +18,18 @@ const getLogin = async (req, res, next) => {
 
 const login = async (req, res, next) => {
   try {
-    const { code } = req.body;
+    let code;
+    if (req.body.code && req.body.code !== '') {
+      code = req.body.code;
+    } else if (req.query.code && req.query.code !== '') {
+      code = req.query.code;
+    } else {
+      return res.status(401).send({
+        status: false,
+        response: null,
+        message: `Strava authentication failed`
+      });
+    }
 
     if (!code || code === '') {
       return res.status(401).send({

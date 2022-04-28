@@ -1,8 +1,17 @@
-const { body, header } = require('express-validator');
+const { body, header, query } = require('express-validator');
 
-const login = () => {
+const loginPost = () => {
   return [
     body('code')
+      .exists()
+      .notEmpty()
+      .isString()
+  ];
+}
+
+const loginGet = () => {
+  return [
+    query('code')
       .exists()
       .notEmpty()
       .isString()
@@ -28,7 +37,8 @@ const refreshToken = () => {
 }
 
 module.exports = {
-  login,
+  loginGet,
+  loginPost,
   logout,
   refreshToken
 };

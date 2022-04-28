@@ -1,0 +1,2744 @@
+{
+	"info": {
+		"_postman_id": "702ce3d4-e0e9-4216-a472-a231cf85c79a",
+		"name": "Strava",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Get Login Uri",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/v1/auth/stravalogin",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"stravalogin"
+							]
+						},
+						"description": "This endpoint is used to get OAuth URI from Strava"
+					},
+					"response": [
+						{
+							"name": "Strava OAuth Login",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/v1/auth/stravalogin",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"v1",
+										"auth",
+										"stravalogin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "222"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"de-mpJveFTaK5d7ayR71ZA12zFt8No\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Apr 2022 04:08:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"response\": {\n        \"uri\": \"https://www.strava.com/oauth/authorize?client_id=83206&redirect_uri=http://localhost:3000&scope=profile:read_all,activity:read_all&approval_prompt=auto&response_type=code\"\n    },\n    \"message\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"95eaa72396503aa898891c5ee0b7b33be5a413d4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/v1/auth/login",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						},
+						"description": "This endpoint is used to get OAuth URI from Strava"
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"code\": \"95eaa72396503aa898891c5ee0b7b33be5a413d4\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{endpoint}}/v1/auth/login",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1139"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"473-hV1YLeYbKaIDuJKGSmWu4ueNN8k\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Apr 2022 04:24:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"response\": {\n        \"athlete\": {\n            \"athlete_id\": 102063983,\n            \"username\": \"toriq_ahmad\",\n            \"firstname\": \"Toriq\",\n            \"lastname\": \"Ahmad\",\n            \"sex\": \"M\",\n            \"premium\": false,\n            \"profile_picture\": \"https://lh3.googleusercontent.com/a/AATXAJyP23yL29KZdtx846yG6ETy0j-71Ur8kI1wG3ZG=s96-c\",\n            \"friends\": 0,\n            \"followers\": 0,\n            \"_id\": \"626a1713a0337c813b228b6a\",\n            \"__v\": 0\n        },\n        \"authentication\": {\n            \"jwt_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdGhsZXRlX2lkIjoxMDIwNjM5ODMsImFjY2Vzc190b2tlbiI6IjAwNjhiYjg3NDFhYmY2ZjRmYzhlYzU3YTc1ZmRhZDRmOTgxNGMyM2YiLCJyZWZyZXNoX3Rva2VuIjoiMDA2OGJiODc0MWFiZjZmNGZjOGVjNTdhNzVmZGFkNGY5ODE0YzIzZiIsImV4cGlyZXNfYXQiOjE2NTExNDExMjYsImV4cGlyZXNfaW4iOjIxMjMzLCJpYXQiOjE2NTExMTk4OTEsImV4cCI6MTY1MTE0MTEyNH0.L4Kf1JJajZb9PtTwQvm50MrwOgYrWbi7WBTwKxmybXU\",\n            \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdGhsZXRlX2lkIjoxMDIwNjM5ODMsImFjY2Vzc190b2tlbiI6IjAwNjhiYjg3NDFhYmY2ZjRmYzhlYzU3YTc1ZmRhZDRmOTgxNGMyM2YiLCJyZWZyZXNoX3Rva2VuIjoiMDA2OGJiODc0MWFiZjZmNGZjOGVjNTdhNzVmZGFkNGY5ODE0YzIzZiIsImV4cGlyZXNfYXQiOjE2NTExNDExMjYsImV4cGlyZXNfaW4iOjIxMjMzLCJpYXQiOjE2NTExMTk4OTEsImV4cCI6MTY1MTIwNjI5MX0.Q7FVcF5XctwCqeggmwDUmKO4hNFtWFIx_i_kcdcNAfA\"\n        }\n    },\n    \"message\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/v1/auth/login?code=95eaa72396503aa898891c5ee0b7b33be5a413d4",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "95eaa72396503aa898891c5ee0b7b33be5a413d4"
+								}
+							]
+						},
+						"description": "This endpoint is used to get OAuth URI from Strava"
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"code\": \"95eaa72396503aa898891c5ee0b7b33be5a413d4\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{endpoint}}/v1/auth/login",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1139"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"473-hV1YLeYbKaIDuJKGSmWu4ueNN8k\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Apr 2022 04:24:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"response\": {\n        \"athlete\": {\n            \"athlete_id\": 102063983,\n            \"username\": \"toriq_ahmad\",\n            \"firstname\": \"Toriq\",\n            \"lastname\": \"Ahmad\",\n            \"sex\": \"M\",\n            \"premium\": false,\n            \"profile_picture\": \"https://lh3.googleusercontent.com/a/AATXAJyP23yL29KZdtx846yG6ETy0j-71Ur8kI1wG3ZG=s96-c\",\n            \"friends\": 0,\n            \"followers\": 0,\n            \"_id\": \"626a1713a0337c813b228b6a\",\n            \"__v\": 0\n        },\n        \"authentication\": {\n            \"jwt_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdGhsZXRlX2lkIjoxMDIwNjM5ODMsImFjY2Vzc190b2tlbiI6IjAwNjhiYjg3NDFhYmY2ZjRmYzhlYzU3YTc1ZmRhZDRmOTgxNGMyM2YiLCJyZWZyZXNoX3Rva2VuIjoiMDA2OGJiODc0MWFiZjZmNGZjOGVjNTdhNzVmZGFkNGY5ODE0YzIzZiIsImV4cGlyZXNfYXQiOjE2NTExNDExMjYsImV4cGlyZXNfaW4iOjIxMjMzLCJpYXQiOjE2NTExMTk4OTEsImV4cCI6MTY1MTE0MTEyNH0.L4Kf1JJajZb9PtTwQvm50MrwOgYrWbi7WBTwKxmybXU\",\n            \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdGhsZXRlX2lkIjoxMDIwNjM5ODMsImFjY2Vzc190b2tlbiI6IjAwNjhiYjg3NDFhYmY2ZjRmYzhlYzU3YTc1ZmRhZDRmOTgxNGMyM2YiLCJyZWZyZXNoX3Rva2VuIjoiMDA2OGJiODc0MWFiZjZmNGZjOGVjNTdhNzVmZGFkNGY5ODE0YzIzZiIsImV4cGlyZXNfYXQiOjE2NTExNDExMjYsImV4cGlyZXNfaW4iOjIxMjMzLCJpYXQiOjE2NTExMTk4OTEsImV4cCI6MTY1MTIwNjI5MX0.Q7FVcF5XctwCqeggmwDUmKO4hNFtWFIx_i_kcdcNAfA\"\n        }\n    },\n    \"message\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Refresh JWT Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdGhsZXRlX2lkIjo1NjEwNjU4OCwiYWNjZXNzX3Rva2VuIjoiZTE1ZDMyNmE5MTMyNjMzYTVhM2UyMTI1ZTI0NjIyYjNiYjVkOTQzMiIsInJlZnJlc2hfdG9rZW4iOiJlMTVkMzI2YTkxMzI2MzNhNWEzZTIxMjVlMjQ2MjJiM2JiNWQ5NDMyIiwiZXhwaXJlc19hdCI6MTY1MTE0MzkwNiwiZXhwaXJlc19pbiI6MjE2MDAsImlhdCI6MTY1MTEyMjMwNCwiZXhwIjoxNjUxMjA4NzA0fQ.NMOwkw1mvATmd2dueoSd8MQwOq4LsYPV4tRsyu1QHdY\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/v1/auth/refresh-token",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"refresh-token"
+							]
+						},
+						"description": "This endpoint is used to get OAuth URI from Strava"
+					},
+					"response": [
+						{
+							"name": "Refresh JWT Token OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdGhsZXRlX2lkIjo1NjEwNjU4OCwiYWNjZXNzX3Rva2VuIjoiZTE1ZDMyNmE5MTMyNjMzYTVhM2UyMTI1ZTI0NjIyYjNiYjVkOTQzMiIsInJlZnJlc2hfdG9rZW4iOiJlMTVkMzI2YTkxMzI2MzNhNWEzZTIxMjVlMjQ2MjJiM2JiNWQ5NDMyIiwiZXhwaXJlc19hdCI6MTY1MTE0MzkwNiwiZXhwaXJlc19pbiI6MjE2MDAsImlhdCI6MTY1MTEyMjMwNCwiZXhwIjoxNjUxMjA4NzA0fQ.NMOwkw1mvATmd2dueoSd8MQwOq4LsYPV4tRsyu1QHdY\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{endpoint}}/v1/auth/refresh-token",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"v1",
+										"auth",
+										"refresh-token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "819"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"333-HTSumCDLbzzPjmAnkRvw6A63AIA\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Apr 2022 05:14:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"response\": {\n        \"jwt_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdGhsZXRlX2lkIjo1NjEwNjU4OCwiYWNjZXNzX3Rva2VuIjoiZTE1ZDMyNmE5MTMyNjMzYTVhM2UyMTI1ZTI0NjIyYjNiYjVkOTQzMiIsInJlZnJlc2hfdG9rZW4iOiJlMTVkMzI2YTkxMzI2MzNhNWEzZTIxMjVlMjQ2MjJiM2JiNWQ5NDMyIiwiZXhwaXJlc19hdCI6MTY1MTE0MzkwNiwiZXhwaXJlc19pbiI6MjE2MDAsImlhdCI6MTY1MTEyMjg0OCwiZXhwIjoxNjUxMTQ0NDQ4fQ.QXF46SDx73EeX0AZyb6F8uR641jX_x6TnKEwzb9kImQ\",\n        \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdGhsZXRlX2lkIjo1NjEwNjU4OCwiYWNjZXNzX3Rva2VuIjoiZTE1ZDMyNmE5MTMyNjMzYTVhM2UyMTI1ZTI0NjIyYjNiYjVkOTQzMiIsInJlZnJlc2hfdG9rZW4iOiJlMTVkMzI2YTkxMzI2MzNhNWEzZTIxMjVlMjQ2MjJiM2JiNWQ5NDMyIiwiZXhwaXJlc19hdCI6MTY1MTE0MzkwNiwiZXhwaXJlc19pbiI6MjE2MDAsImlhdCI6MTY1MTEyMjg0OCwiZXhwIjoxNjUxMjA5MjQ4fQ.RnkOQvFMJPfKvMrno8Ms_Nj5Uybq2TpBRuHxLYO3NNQ\"\n    },\n    \"message\": null\n}"
+						},
+						{
+							"name": "Refresh JWT Token Refresh Token Expired",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdGhsZXRlX2lkIjo1NjEwNjU4OCwiYWNjZXNzX3Rva2VuIjoiZTE1ZDMyNmE5MTMyNjMzYTVhM2UyMTI1ZTI0NjIyYjNiYjVkOTQzMiIsInJlZnJlc2hfdG9rZW4iOiJlMTVkMzI2YTkxMzI2MzNhNWEzZTIxMjVlMjQ2MjJiM2JiNWQ5NDMyIiwiZXhwaXJlc19hdCI6MTY1MTE0MzkwNiwiZXhwaXJlc19pbiI6MjE2MDAsImlhdCI6MTY1MTEyMjMwNCwiZXhwIjoxNjUxMjA4NzA0fQ.NMOwkw1mvATmd2dueoSd8MQwOq4LsYPV4tRsyu1QHdY\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{endpoint}}/v1/auth/refresh-token",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"v1",
+										"auth",
+										"refresh-token"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "83"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"53-D1ey6FDy467zcY7voqgiuxjKLcw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Apr 2022 05:14:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"response\": null,\n    \"message\": \"jwt refresh token not valid or expired\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/v1/auth/logout",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "This endpoint group contain all authentication endpoint service",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Athlete",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/v1/athletes",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"v1",
+								"athletes"
+							]
+						},
+						"description": "This endpoint is to fetch all athlete from system"
+					},
+					"response": [
+						{
+							"name": "Get All Athlete No Authorization",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{jwt_token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{endpoint}}/v1/athletes",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"v1",
+										"athletes"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"49-f5Z4CNbjcil2rs9wnvS9PqUV3G8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Apr 2022 04:28:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"response\": null,\n    \"message\": \"authorization: Invalid value\"\n}"
+						},
+						{
+							"name": "Get All Athlete Invalid JWT Token",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "asdasd",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{endpoint}}/v1/athletes",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"v1",
+										"athletes"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4b-qakh6MnrviHJOGElvhSDcbGVk6g\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Apr 2022 04:34:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"response\": null,\n    \"message\": \"jwt token not valid or expired\"\n}"
+						},
+						{
+							"name": "Get All Athlete OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{jwt_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{endpoint}}/v1/athletes",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"v1",
+										"athletes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "601"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"259-yI8mH3VGibguDGylOAd0Av5RLAw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Apr 2022 04:28:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"response\": [\n        {\n            \"_id\": \"626954f56a71fbbbcaa0f758\",\n            \"athlete_id\": 56106588,\n            \"username\": \"prada_p\",\n            \"firstname\": \"PRADA\",\n            \"lastname\": \"Ari P\",\n            \"sex\": \"M\",\n            \"premium\": false,\n            \"profile_picture\": \"https://graph.facebook.com/113484454677027/picture?height=256&width=256\",\n            \"friends\": 0,\n            \"followers\": 0,\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"626a1713a0337c813b228b6a\",\n            \"athlete_id\": 102063983,\n            \"username\": \"toriq_ahmad\",\n            \"firstname\": \"Toriq\",\n            \"lastname\": \"Ahmad\",\n            \"sex\": \"M\",\n            \"premium\": false,\n            \"profile_picture\": \"https://lh3.googleusercontent.com/a/AATXAJyP23yL29KZdtx846yG6ETy0j-71Ur8kI1wG3ZG=s96-c\",\n            \"friends\": 0,\n            \"followers\": 0,\n            \"__v\": 0\n        }\n    ],\n    \"message\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/v1/athletes/102063983",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"v1",
+								"athletes",
+								"102063983"
+							]
+						},
+						"description": "This endpoint is used to fetch athlete by id from system"
+					},
+					"response": [
+						{
+							"name": "Get By Id Athlete Invalid JWT Token",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "asdasda",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{endpoint}}/v1/athletes/102063983",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"v1",
+										"athletes",
+										"102063983"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4b-qakh6MnrviHJOGElvhSDcbGVk6g\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Apr 2022 04:39:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"response\": null,\n    \"message\": \"jwt token not valid or expired\"\n}"
+						},
+						{
+							"name": "Get By Id Athlete OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{jwt_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{endpoint}}/v1/athletes/102063983",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"v1",
+										"athletes",
+										"102063983"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "330"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"14a-lzC+sKB+LWvToYSpt5V5ulLdT1s\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Apr 2022 04:38:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"response\": {\n        \"_id\": \"626a1713a0337c813b228b6a\",\n        \"athlete_id\": 102063983,\n        \"username\": \"toriq_ahmad\",\n        \"firstname\": \"Toriq\",\n        \"lastname\": \"Ahmad\",\n        \"sex\": \"M\",\n        \"premium\": false,\n        \"profile_picture\": \"https://lh3.googleusercontent.com/a/AATXAJyP23yL29KZdtx846yG6ETy0j-71Ur8kI1wG3ZG=s96-c\",\n        \"friends\": 0,\n        \"followers\": 0,\n        \"__v\": 0\n    },\n    \"message\": null\n}"
+						},
+						{
+							"name": "Get By Id Athlete No JWT Token",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{jwt_token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{endpoint}}/v1/athletes/102063983",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"v1",
+										"athletes",
+										"102063983"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"49-f5Z4CNbjcil2rs9wnvS9PqUV3G8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Apr 2022 04:38:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"response\": null,\n    \"message\": \"authorization: Invalid value\"\n}"
+						}
+					]
+				}
+			],
+			"description": "This endpoint group contain all athlete endpoint service",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Activity",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/v1/activities?athlete_id=56106588&type=Ride",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"v1",
+								"activities"
+							],
+							"query": [
+								{
+									"key": "athlete_id",
+									"value": "56106588",
+									"description": "Optional: this parameter is for filtering activities by athlete id (Integer e.g: 56106588)"
+								},
+								{
+									"key": "type",
+									"value": "Ride",
+									"description": "Optional: this parameter is for filtering activities by activity type (String e.g: Ride)"
+								}
+							]
+						},
+						"description": "This endpoint is to fetch all athlete from system"
+					},
+					"response": [
+						{
+							"name": "Get All Activity Invalid JWT Token",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "asdad",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{endpoint}}/v1/activities?athlete_id=56106588&type=Ride",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"v1",
+										"activities"
+									],
+									"query": [
+										{
+											"key": "athlete_id",
+											"value": "56106588",
+											"description": "Optional: this parameter is for filtering activities by athlete id (Integer e.g: 56106588)"
+										},
+										{
+											"key": "type",
+											"value": "Ride",
+											"description": "Optional: this parameter is for filtering activities by activity type (String e.g: Ride)"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4b-qakh6MnrviHJOGElvhSDcbGVk6g\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Apr 2022 04:44:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"response\": null,\n    \"message\": \"jwt token not valid or expired\"\n}"
+						},
+						{
+							"name": "Get All Activity No JWT Token",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{jwt_token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{endpoint}}/v1/activities?athlete_id=56106588&type=Ride",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"v1",
+										"activities"
+									],
+									"query": [
+										{
+											"key": "athlete_id",
+											"value": "56106588",
+											"description": "Optional: this parameter is for filtering activities by athlete id (Integer e.g: 56106588)"
+										},
+										{
+											"key": "type",
+											"value": "Ride",
+											"description": "Optional: this parameter is for filtering activities by activity type (String e.g: Ride)"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"49-f5Z4CNbjcil2rs9wnvS9PqUV3G8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Apr 2022 04:43:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"response\": null,\n    \"message\": \"authorization: Invalid value\"\n}"
+						},
+						{
+							"name": "Get All Activities OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{jwt_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{endpoint}}/v1/activities",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"v1",
+										"activities"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "62544"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f450-ZYSQgyHcq/T09Qpw5uyyX0vylDg\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Apr 2022 04:40:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"response\": [\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a6791010788\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"xqqh@{qxdTHDQKGKGAK@YCEE@OCADM^I@IGE@BC?AIF@QIH@C@@@CCE@N@GCD?@DEDQ??@JDX?D@AJFD\\\\BLDTAVFPAjBNtA@x@FV?d@F|CDhBGVIJAbA]XG~@_@~@W|@Qp@WFAXKlA[rBs@n@MJIl@MlBs@VEVMnAc@TK`A]hAOxDSzB@HBHCp@@b@APCfDCZ@nAE^@h@C^@jBCnFO|@Az@@zAC|AWnBc@d@KJ?XM~Cy@f@S`@GJBJHBNJVBPRnJ@pIDz@ArCB~@?bCBnBBX@`BCn@BzAC~@?`DDjGAp@@xAC|@@~BC|AFl@EdC@NCpA@PEd@?pBInC@~B?tAC^@bBAH@HCrD@DDFEH@`@CT@nAAjFCnACHBHCl@@rAERDh@Gt@@JE\\\\?LOfBENBNEv@Kh@OrACj@UzAItAOt@Il@KnACJEl@UnBKxAy@bHWzCMp@OtBe@pDKxASxAEt@{@pH?TKhAEZC@DBC@HDIGFBDJEEKACCB@?K?FA?DBEGEN@TIx@C~@Kj@m@zFCJCXUvA?RUxA?NCDSFSGoHoCmA[qCeAuC{@qBu@y@U]Qk@OeBm@WOWEoBu@KAMEuDuAkA]WMqBq@u@[kA_@cAa@gEmA_G}Bo@QkCeAMIMAYMeA]qCiAWGoAe@iDuAc@WsAc@oBy@SMq@S_CcAMCe@WyAe@i@W_HoCUKcA]GG{@WaDsAgAg@gAa@iAg@}Ak@eAe@a@MiDuAyBw@qB{@GEu@[QMQEAWDQRqBF}AFc@VkEDWFgA@g@NuBDcANeBNoANsB@c@NoAh@sGBeDBWBgBFe@JsDEq@R_COiAIQBc@CQ?a@@[F[BYDKHi@PcB?YBYFkABM@k@DQDo@FYAKDYAMLgA?k@Di@?YNkB?_@Hi@?a@Fo@BuAJ_BC_@Bu@C{@Bu@OeCD}@CUDe@?_ABEAID_@CUDsANqCBeAJ}@JIr@CXFHAb@JrARnBJnBOn@Iz@S~@UHITIn@Ed@BHAzAJnCJfBHnA?|BRdGZ^A?EDGCC@AHFa@Q^AK??CEBCAFA@BC^CABC\"\n            },\n            \"_id\": \"62694c87f198dc0373965967\",\n            \"id\": 6791010788,\n            \"resource_state\": \"2\",\n            \"external_id\": \"5ABA701E-1ED7-4547-AD35-3BD03A521961-activity.fit\",\n            \"upload_id\": 7223788182,\n            \"name\": \"Afternoon Ride\",\n            \"distance\": 13270,\n            \"moving_time\": 2734,\n            \"elapsed_time\": 2916,\n            \"total_elevation_gain\": 13.2,\n            \"type\": \"Ride\",\n            \"start_date\": \"2022-03-08T09:23:08.000Z\",\n            \"start_date_local\": \"2022-03-08T16:23:08.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.812605541199446,\n                111.05069979093969\n            ],\n            \"end_latlng\": [\n                -6.812436645850539,\n                111.05102961882949\n            ],\n            \"achievement_count\": 0,\n            \"kudos_count\": 0,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 4.854,\n            \"max_speed\": 10.332,\n            \"average_watts\": 71.5,\n            \"kilojoules\": 195.5,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 18.3,\n            \"elev_low\": 6.8,\n            \"pr_count\": 0,\n            \"total_photo_count\": 0,\n            \"has_kudoed\": false,\n            \"workout_type\": 12,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a5588479623\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"fwfh@}lvdTNLh@@Z@bBIr@@LAr@LdBBhCChAGh@AJBFE|CAz@MbACb@Iz@Ed@K|AMbAKPE\\\\BVC~Dn@bCd@hAHvBXhPjBd@JbAPlANTFz@NxFn@r@NT@rCXbBVn@Nv@JvHn@~@PjBNnBXdCTdDj@`AHbBHlBNz@JlAVdCTzEl@tDVr@LxDd@jDXpATJ@FEB@DAE?`B^pCXlARpFh@h@Hx@PRARFnANZFt@FZF|@BpARfAf@rAx@vAp@`Af@`A`@jAXbA`@`HxCvAh@d@X\\\\Jp@XVFLOFc@?a@Dk@V{ALgBLu@DMNsBf@wCRcDRuAHeARcADIf@KrAILK@ECS?c@K_A?i@D[?wACSD_ACKAm@E]AgA@[Ea@@]SqAEE{AGw@Dq@J_AHq@@y@MEGCUHcC?c@DqCCk@@{@DaAPgAFy@?o@LqB^wCP_Cb@eC?e@FwA\\\\mCHsARmAFeALi@NkANo@PeBf@qBPqAVcAFa@Rq@CGDCF?h@Lj@RfAPzA`@n@Ff@@nBTj@BzANj@Bt@JhAH|@P~@BjBPV?v@LhAJfARbDb@`DVxBFfCM^E~Aa@|@[x@Kv@CL@NHlAJnAFpCDvGd@|ADfAJDAP@b@?DAAEm@IIIPkBLe@ICGTAh@?XGTCf@?@n@CLKN@AB?E\"\n            },\n            \"_id\": \"62694c87f198dc0373965969\",\n            \"id\": 5588479623,\n            \"resource_state\": \"2\",\n            \"external_id\": \"4B25075D-0BF0-46B2-993C-6A2A2C8A6F9C-activity.fit\",\n            \"upload_id\": 5946705062,\n            \"name\": \"Afternoon Ride\",\n            \"distance\": 9018.3,\n            \"moving_time\": 1772,\n            \"elapsed_time\": 2536,\n            \"total_elevation_gain\": 16.5,\n            \"type\": \"Ride\",\n            \"start_date\": \"2021-07-07T09:32:22.000Z\",\n            \"start_date_local\": \"2021-07-07T16:32:22.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.757151,\n                111.039675\n            ],\n            \"end_latlng\": [\n                -6.812616,\n                111.051133\n            ],\n            \"achievement_count\": 1,\n            \"kudos_count\": 1,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 5.089,\n            \"max_speed\": 9.3,\n            \"average_watts\": 69.3,\n            \"kilojoules\": 122.8,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 15.3,\n            \"elev_low\": 5,\n            \"pr_count\": 1,\n            \"total_photo_count\": 0,\n            \"has_kudoed\": false,\n            \"workout_type\": 10,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a4748749132\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"fpqh@itxdTN^BVQAQGCI?KMIeCESAKGQFOAwDWqBE{BQ}EMg@DqA`@kAV_CTs@Bw@EkBUg@Ca@E_@@WKEE?O@@?BD?F]OR?F?x@EbAAdAObB?p@I~ACpBA`AFhBA`@HvBG~DGz@Ah@[`EGtAG^?d@MxAIl@@^K^AxAIr@KxBE\\\\GLGBs@?UD_D@IFKx@GDMBaBD{AEQEWAYJEJ?HBZ?NBHDl@B|@Ih@GF}@Cw@@QBOAOB]CWDwAHkALsADu@NeBFM@IDHb@FrB?`@Bf@AVFfACp@ADMDa@BUFQ?w@DGDKpBSjBEt@MpA?LMj@Ej@GR@DCCDm@?EE?FPAFIt@Mp@GbAQdBa@xBMlA]lBAVAB?CE?SGqBw@qCqAOKy@a@]K_Bm@c@U{@[w@a@gAa@m@[OCC@D?{@e@_A]_@WWUUM_A_@_Eo@_AGSEWA}ASS?wAQQ?OFDGAAeBYy@Kc@AkBYDDIGk@Ko@Ic@COCiAw@qAgAc@WaAy@u@u@aDmCkBeBk@c@aAaAm@_@kA_AkAeAEIWOSYo@a@QS[O_IeHwAaAs@q@s@i@m@q@c@YuAoA}D_D_ByAa@YkC{BcB{Ay@q@}AwAo@c@YCUOq@o@aAgAcBaBiBqBUSKEEFHDEKFBIKqBwBgE_HESoFeIISMk@Q_@C_@BOLM?CEG@SA[Lc@Xo@DAf@D`@N`Bd@TBl@RVDp@B`AOREVMn@IbAWb@Gn@WXYFOh@e@fA}AFQj@e@r@U`AIh@KpCSZ@dAGbDGRCJEJH?JEACDACADHUD@@EnACF@TAZ@j@Iv@?\\\\EhAEd@@LCT?FCGANF`@CjAN|@@d@FnAFv@HlA?V?`@Fd@CfA@h@DXA~@Bl@HpAB\\\\A~AHv@?~AJLB~@A|BJhA@r@DxABh@DnBFbET~@J~BJrANd@@lBNlCNpARpCRxEn@xDp@rAN\\\\H|@JrCd@jDn@rARdEx@tAPr@NdAJzDn@dE\\\\nANxBNxCZZF`DVvAVzDZ\\\\DZHl@FNDzDNpCU`AUlBk@TClJ\\\\zCPlABxDVv@Bb@@VCT@EKDA?IDABHM@AGDAAC@A?DED?G\"\n            },\n            \"_id\": \"62694c87f198dc037396596d\",\n            \"id\": 4748749132,\n            \"resource_state\": \"2\",\n            \"external_id\": \"4c3cd59f-2346-45be-b3c0-3f0373ea2e72-activity.fit\",\n            \"upload_id\": 5068570262,\n            \"name\": \"GoJir, Goesfajri Banjir\",\n            \"distance\": 13144.8,\n            \"moving_time\": 4496,\n            \"elapsed_time\": 5253,\n            \"total_elevation_gain\": 21.7,\n            \"type\": \"Ride\",\n            \"start_date\": \"2021-02-07T09:17:59.000Z\",\n            \"start_date_local\": \"2021-02-07T16:17:59.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.812352,\n                111.051092\n            ],\n            \"end_latlng\": [\n                -6.812516,\n                111.051178\n            ],\n            \"achievement_count\": 0,\n            \"kudos_count\": 0,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 2.924,\n            \"max_speed\": 6.5,\n            \"average_watts\": 55.7,\n            \"kilojoules\": 250.3,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 13.8,\n            \"elev_low\": 5,\n            \"pr_count\": 0,\n            \"total_photo_count\": 1,\n            \"has_kudoed\": false,\n            \"workout_type\": 12,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a4552545237\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"rpqh@qtxdT\\\\_@^CLBGJSNgAT{A?aDMkAIeCG_EYyEWk@DuBr@s@Nk@FqAJg@?mAK?AFCL@\\\\E~ANh@AhAKv@O`AUx@]TE\\\\AzHVrALbEVr@?j@LhA?VE^?CEL@DRCLBDZLb@F@B\"\n            },\n            \"_id\": \"62694c87f198dc037396596b\",\n            \"id\": 4552545237,\n            \"resource_state\": \"2\",\n            \"external_id\": \"638F920A-94A9-4ACE-A434-279C8D952C86-activity.fit\",\n            \"upload_id\": 4863921151,\n            \"name\": \"Nyore\",\n            \"distance\": 1661.6,\n            \"moving_time\": 305,\n            \"elapsed_time\": 474,\n            \"total_elevation_gain\": 0,\n            \"type\": \"Ride\",\n            \"start_date\": \"2021-01-02T09:42:04.000Z\",\n            \"start_date_local\": \"2021-01-02T16:42:04.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.812415,\n                111.051134\n            ],\n            \"end_latlng\": [\n                -6.812632,\n                111.050803\n            ],\n            \"achievement_count\": 0,\n            \"kudos_count\": 0,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 5.448,\n            \"max_speed\": 9.9,\n            \"average_watts\": 96.6,\n            \"kilojoules\": 29.5,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 13.5,\n            \"elev_low\": 12.1,\n            \"pr_count\": 0,\n            \"total_photo_count\": 0,\n            \"has_kudoed\": false,\n            \"workout_type\": 10,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a4435002757\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"jqqh@itxdT@?Uf@`@CN@FCJAVBhBBb@FbDPlD@xAFn@AhAYRILIY?eAXoBTa@Ao@GGIAE@SFKED@NFFXDbAJ~@Cj@Ef@K|@WdBm@jB]dAi@l@QZGr@UbEeAx@]ZGz@[XQ`@OFEn@QFF@TGX@b@Kf@A\\\\M~@A`@Kz@DLl@DVCh@J`@C^DnAFbACH@VCHBDL?t@FnAD?n@_@h@SVQLCFEb@GJB@KB?@?@JKMBA?BE@AAA@JXSKaA`@E@sAn@K?CE?UImA?c@EKSC}AD{BKk@@SEa@CWDEAAOZsD?s@D]FO@YEOGAC?a@Tq@P}@d@[Hq@Z_Bf@yDbAy@LoErAm@NiA^cAVq@HYFu@BoDMgBAc@Gm@Ce@@]Cg@?ECm@ECCo@OUCI@?OHSHJ\"\n            },\n            \"_id\": \"62694c87f198dc037396596f\",\n            \"id\": 4435002757,\n            \"resource_state\": \"2\",\n            \"external_id\": \"FA595EE1-9A4E-4E60-9439-27AB0A220BB1-activity.fit\",\n            \"upload_id\": 4739718400,\n            \"name\": \"GOCAPAN \",\n            \"distance\": 3635.8,\n            \"moving_time\": 938,\n            \"elapsed_time\": 2428,\n            \"total_elevation_gain\": 2.8,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-12-05T23:10:30.000Z\",\n            \"start_date_local\": \"2020-12-06T06:10:30.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.812538,\n                111.05109\n            ],\n            \"end_latlng\": [\n                -6.81255,\n                111.051134\n            ],\n            \"achievement_count\": 0,\n            \"kudos_count\": 0,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 3.876,\n            \"max_speed\": 9.8,\n            \"average_watts\": 60.6,\n            \"kilojoules\": 56.8,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 15.1,\n            \"elev_low\": 12.1,\n            \"pr_count\": 0,\n            \"total_photo_count\": 0,\n            \"has_kudoed\": false,\n            \"workout_type\": 10,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a4410729176\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"dqqh@itxdTP@HIP@LE|@GMEBGD@CFCBINoCMw@?uBNiB@qDQQO{@G_DOqDAK?g@Ja@Ri@PwAVu@HsAJ[?s@EiAKYAq@KM@a@O[G}AKkBUQE}ASc@KaEYi@Ie@CwDUGMGAkBIaAMe@CiB]_AIYIs@Mu@Iw@So@E}A]eBQEEw@QK?GEM?]Io@I}@Ya@EgAWiC_@iCYaBa@kEq@aBMi@?D?C?UK_@Bc@Au@IyAIqBIQ?wAEkDWk@?i@Ey@G]KWCc@AO@y@@y@E{@?oAI_@EYGyACe@EmCCUAu@Kq@@s@EqBCwAIuBE{@Gq@?s@I{@?}@Ca@Im@@e@GmACqBOiAEqABc@C{@NuCBiBJ]FYBs@?wAFq@AiABy@HkANy@DYFWJCHa@\\\\GLOJSTw@nA]d@]\\\\WRm@Nk@D_AN{@T_BXY@g@Ek@I_Bm@QU_AUOA[SWKk@K]BEB[FULSDe@XkAj@m@RqCfAqAl@aBl@kBn@uB|@sAr@s@Rc@RqA^e@Ra@T_@LgBp@CA_@V]NOJ]NYH]R]Ju@LKFe@J[Lg@\\\\wAn@]H[TUJKHq@Lu@\\\\[Jc@HeA\\\\q@^WB_@NYDCF?Hf@nBLv@Rz@FhAARMj@Wh@IZEX?RDPYhB_@|@M^_@tBGNMf@Kz@En@SrAMlAS`AM~@@HKd@EJAXe@tD?TOx@K^OnAQ`AIZEd@MXOv@Gr@UvAWtAITCRBHB?\"\n            },\n            \"_id\": \"62694c87f198dc0373965973\",\n            \"id\": 4410729176,\n            \"resource_state\": \"2\",\n            \"external_id\": \"6E9F0328-41A8-45CD-9A3D-E6DCD4004B65-activity.fit\",\n            \"upload_id\": 4714077154,\n            \"name\": \"Afternoon Ride\",\n            \"distance\": 7877.7,\n            \"moving_time\": 1424,\n            \"elapsed_time\": 1650,\n            \"total_elevation_gain\": 8.9,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-11-30T06:59:56.000Z\",\n            \"start_date_local\": \"2020-11-30T13:59:56.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.812507,\n                111.05109\n            ],\n            \"end_latlng\": [\n                -6.755322,\n                111.037271\n            ],\n            \"achievement_count\": 0,\n            \"kudos_count\": 1,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 5.532,\n            \"max_speed\": 13.7,\n            \"average_watts\": 85.2,\n            \"kilojoules\": 121.4,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 16.3,\n            \"elev_low\": 9.2,\n            \"pr_count\": 0,\n            \"total_photo_count\": 1,\n            \"has_kudoed\": false,\n            \"workout_type\": 12,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a4051115427\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"|pqh@asxdT@JDe@HI@KQPg@L?Xv@HJHPGpA@bBNJULKbFP\\\\E~@FhBGxBk@\\\\CTQh@MTOlKqCpCiAzAYtB}@dB[z@B`@GLBf@El@Bp@IpDBbB?PE|@D`@AjAMNFXEpC?dIYVD~AA^Kb@@VI^Dv@]xDu@JKr@OZQRAj@IvAm@l@eANq@\\\\o@L{@Nm@d@{AB[Zc@~@yBDa@NWJe@PU@Sk@cCBIYo@mBcD{A{CYaAcCmFqAiCi@kB]mBy@}BsB{DQi@iA}Bk@qASm@iAsBy@{BkBwDMe@[}@sEkJW}@]o@o@eBeA{BUs@o@uA[mAi@gAGWi@q@GW}@_BIW_@k@m@}A_@YK[[a@eBcFq@yCgCaG}B_F{AwCiBoEa@k@cBoDSQkD{GcBuDi@s@e@eA{AaCgBqDyAyBgAgBIYMKu@sAm@s@a@w@GUiAcBc@oA_@k@i@c@o@mAUY{@kCs@}Ao@iASm@e@u@{@{BcAgB}@gC}@qBu@oAk@cB_@o@e@oAgAkBe@eBMw@eAaCIg@O{DJe@AmBB_@CUPKXCJKA{@a@AQXCf@Cj@FdAGv@_@RcECoAKqBYmBCkGq@BZC`@Hz@EJe@RCJJh@`@jEJLb@BRTGfCUh@iApD]pBMnAq@bCOpAOf@MlBOf@Kr@c@~AS^_@ZId@KtC@rAQ~D?nCRhBA~@MbCk@`CGf@OXAVOf@GfAKb@U|Be@~CS`B[lDSt@EfABpAE`GGh@k@rBBLJHfBEP@RLG~ETxAUz@JlBKzA@b@Vt@Dx@k@jBc@dC_AfBGd@TpAAdAJhBMlBuAdFo@x@KBw@Iy@Jk@C_Cm@K@KJ]`GKl@ChAWxAEdAS~@KbBe@|CG|@MpB@v@GxAk@jD?b@[t@[TI^i@pEm@pDq@`Fe@zE]pAq@nB_@p@m@fB[nAe@bAMj@s@jBUbAa@dAeAlDg@lAFJz@Rj@BX\\\\dAb@n@OzABfATbEVx@PlA@\\\\F`Ah@fBDb@Jz@DHCHeANw@PaDlDUnABrDZt@?fBJ|BZrCHfIt@`BB|Ef@|@@p@HpETrCZ~BHxBPRRCj@@s@WuBHeAPCpA^tDAvALDJ?Ra@pCmBhBk@\\\\a@vA[~BAr@SnAAv@k@nELFb@?DBAB\"\n            },\n            \"_id\": \"62694c87f198dc0373965971\",\n            \"id\": 4051115427,\n            \"resource_state\": \"2\",\n            \"external_id\": \"997B3459-7D42-46BB-A42B-AED20BE8657C-activity.fit\",\n            \"upload_id\": 4335586649,\n            \"name\": \"Morning Ride\",\n            \"distance\": 17746.6,\n            \"moving_time\": 4638,\n            \"elapsed_time\": 6256,\n            \"total_elevation_gain\": 91.2,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-09-12T23:08:30.000Z\",\n            \"start_date_local\": \"2020-09-13T06:08:30.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.812463,\n                111.050895\n            ],\n            \"end_latlng\": [\n                -6.812531,\n                111.051058\n            ],\n            \"achievement_count\": 0,\n            \"kudos_count\": 2,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 3.826,\n            \"max_speed\": 8.8,\n            \"average_watts\": 47.9,\n            \"kilojoules\": 222.2,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 27,\n            \"elev_low\": 5.4,\n            \"pr_count\": 0,\n            \"total_photo_count\": 0,\n            \"has_kudoed\": false,\n            \"workout_type\": 12,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a4017994331\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"bqqh@ysxdTEDDHdALvINxAN~DEfD}@vAm@lBc@`@SdAQd@W`Ba@~D_BnGiBtDYADhA@nGKpGAl@Gn@FnGWbEBfBOfIcBhBm@\\\\A|BoAvBo@vAw@v@Yj@a@vCiAtC_@xAY`AGnBG`BBhBNnCC~F`@|I^`MEzBH~GOfFPpD@|CJdBd@XiAB_BTmB?]RkA?mCWcCNs@G_BDsAZmBDs@MgAW{@IiAWeAKEU@}B`AaAv@eBf@OO?a@Wu@GsAF]RYLk@A_AFsA?sBKo@E_DGIiAJMI?c@IQIoAE{BUwA@o@KiBMUUmADY?cCKu@AyAIYKiA?OLZgDvBgF|Dq@^_C~BwCx@{Ch@}@VwDpAaBjA{B|@cGtCYRq@bAaBzC{@lAa@OkCa@_DeAwCo@q@a@gAa@EMDkALeBCGmAe@mAGoAWoAGcAVcCAGQD{BGIu@]w@Qi@CwB[uAa@cAAcBRo@XW?yA{CmCaGWw@eBcE{@uAWeAa@mAeD_HoBiEoAuDy@kBiBsDwAgDiB_EmA_Cg@yAmAyBc@wAgAuBq@eBwAeCeCuF_EgIcCoEQIMg@_CwDsEyIu@oAw@eB}AgCPCH?MDQ?}CaGiEqHaEsI}@_CyF_MsAwD_AoBi@{AiAiCBuCF[@wFDOJIl@??IEBD?CD@XJJIYqAa@\\\\@Pq@FG@D@GEH?RHMDHFa@BHQ`@AGMFBDXGSf@YDOT@b@IxA@`AGNwCC_BKkCWcAGIDK~EDzBCj@SNsDE_@DEHO`CWfAm@fAg@|AeAhG@Lk@`CKdAs@bESr@i@r@Qh@KzA@bCMzBAxEPpA@n@GtBcAhGSr@[bCWnAcA`IG~AWrAM~ABrCI|Ck@|CPP|BNPDDHIjAEbCTtAQpAI|D@b@TpB}@|EUn@c@n@Uv@L`BNzCAz@MhAcAtDa@~@WRm@Eu@LU?aDe@S@QHKlA?p@YtBY|DSt@KpB]dBWhCUpDEzBe@fCIhA@\\\\M^YZKVaAlHM\\\\F\\\\o@hD[tC_@zBEt@Ih@sCrHw@`B}@hDwA`EmAzDKl@p@Xz@HTZnA\\\\zAOfATdAB~@Rv@@|ATfABp@LT\\\\nA^nBPr@GXa@RkBT{CLQtAIpA?f@HdKb@nC\\\\xLz@pEl@hCBlDVn@LvBB~E`@vADPIDgCLYxAT|@HvAMfAJf@CFD@PYvCIPwCxBQXc@nCC`A]xBKvAUdAM`BFZd@?@GGWK@@C\"\n            },\n            \"_id\": \"62694c87f198dc0373965975\",\n            \"id\": 4017994331,\n            \"resource_state\": \"2\",\n            \"external_id\": \"5C32D281-6FFE-4BC7-A65B-719F30C268C4-activity.fit\",\n            \"upload_id\": 4300534641,\n            \"name\": \"Morning Ride\",\n            \"distance\": 22650.2,\n            \"moving_time\": 6104,\n            \"elapsed_time\": 8412,\n            \"total_elevation_gain\": 114.5,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-09-05T22:59:08.000Z\",\n            \"start_date_local\": \"2020-09-06T05:59:08.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.812493,\n                111.051017\n            ],\n            \"end_latlng\": [\n                -6.812348,\n                111.0512\n            ],\n            \"achievement_count\": 0,\n            \"kudos_count\": 1,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 3.711,\n            \"max_speed\": 8.7,\n            \"average_watts\": 52,\n            \"kilojoules\": 317.4,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 27.9,\n            \"elev_low\": 5.4,\n            \"pr_count\": 0,\n            \"total_photo_count\": 3,\n            \"has_kudoed\": false,\n            \"workout_type\": 12,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a3962770332\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"pqqh@utxdTMNYJ{@?oMo@aFOkBAcAF}Cl@eANuAH_A?sBMeI_AuHq@wBWiCQwFk@mDe@_Ca@]CWDQRIXmArGeAzGa@dDa@`Gk@`FoAzOGrACpBI`DEx@Ir@MXk@V_ARy@LSHONKREZCh@CjDSnBC|@@xAL`BC^Od@QRWLkDJw@TmDtBYXKRK`@Ch@A`BFtCA\\\\ILWCuBeAq@Y_ASaBQqB]yCWqAQ}Ei@qE_@}Ce@_D_@{CWqBYyH{@yDi@eBQgC]yE[Q?l@BcBBIGb@CJh@@\\\\APINOJSHs@DWHUJQRU`@w@vBYh@g@z@w@`AU^s@nB[p@e@x@c@b@_@Pc@Fc@Dw@@wAGyCU{B[u@?_ATkB~@[RQNOTs@fBOVe@f@oA`A[`@Ub@Od@Kj@K~@Qz@Sh@[tBIRYPe@Fq@EyAMcCKgFc@{COcDAiAHw@@sBYqCQqC]}Hg@_KmAqA?sAD{ALkARkD`AeFvBaCz@wDjA}Aj@eCdAoBn@eC~@yA~@Y?SI}@aAa@m@OYMg@C]BaBE_@Cv@DP_BoBE?oCx@oBb@KF{Bl@g@PsD`AgKbDaCj@iIdCg@JiDbAoAXg@DQCYQYm@WmAu@mFKgAAi@?{@NkC@g@OiBAoAV?^LZr@p@CF]TUvACp@g@z@AhDNLCROFOJi@\\\\uDt@mFt@qIJa@NQHIZKt@OfE]`BG~E@zDLh@?\\\\CzA?pDb@z@@l@AN_@^uBHs@JUb@OZCv@A\\\\IHKFMFi@JmDFSLGr@BvBZ`@BdANvB^vBf@pAJX?r@GXEj@WRMbB}If@_DLe@JEVG|CCnFBn@BtNArACzEUdDYbBSd@?XBbEr@bFt@~I~@tARtALxBXhARpDb@bEp@fDd@|Gt@jDXhFj@lFx@rEh@pGj@fEd@fEXtATpEd@nB\\\\hC\\\\`BXrCTfB\\\\bGn@rD\\\\dC\\\\zDZjCXrAXXJlEbC~HbDfIlDl@Rd@Jr@C\\\\OXSJq@Z{C`@iFdAqILwBA]Gg@GY[o@Us@WkAEc@?iBZmDAaBIu@M[QUe@Uu@IUIOQOa@Cu@?mCHiDHaBx@mKx@wH\\\\mEl@gGh@gDX{BNu@dA}DHSZk@b@[H@xCf@zEp@`MjAzDf@hE^|DVZFrBJ|A?lBKpFq@nBAdERlFPjCPpAL|@@LAJMLyBBIHG\"\n            },\n            \"_id\": \"62694c87f198dc0373965977\",\n            \"id\": 3962770332,\n            \"resource_state\": \"2\",\n            \"external_id\": \"3030524812-1598344217.gpx\",\n            \"upload_id\": 4241945193,\n            \"name\": \"Afternoon Ride\",\n            \"distance\": 22716.7,\n            \"moving_time\": 4840,\n            \"elapsed_time\": 6217,\n            \"total_elevation_gain\": 0,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-08-25T08:30:19.000Z\",\n            \"start_date_local\": \"2020-08-25T15:30:19.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.812568,\n                111.051155\n            ],\n            \"end_latlng\": [\n                -6.812402,\n                111.051819\n            ],\n            \"achievement_count\": 3,\n            \"kudos_count\": 0,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 4.694,\n            \"max_speed\": 12.2,\n            \"average_cadence\": 40.6,\n            \"average_watts\": 83.9,\n            \"kilojoules\": 406,\n            \"device_watts\": false,\n            \"has_heartrate\": true,\n            \"elev_high\": 11,\n            \"elev_low\": 11,\n            \"pr_count\": 0,\n            \"total_photo_count\": 0,\n            \"has_kudoed\": false,\n            \"workout_type\": null,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a3952020561\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"hhrh@}rxdTfDcAd@YbFiArCcAvBe@~EwBxCk@tDMhCJbBMrCDtFQnD?jDOxAD~BIjC_@fBm@nBe@nAk@zAa@lGcCdF_CpCq@pD]bKGzIf@nEJbHXbBE~BH`MKpBHxJ@rDTj@XByBN{@@s@XkBLqBP_@dBoAb@u@R_B@k@Eg@LsAPe@lB{Bj@c@j@O~EUr@StDi@rBc@tAcAr@s@tA}@jAeB|BcCzGiFhAg@tDcCpCsA`BeAv@SZ?hCYbASTB^InCEdDg@vHe@jEM|BRdBWjDCn@H\\\\Nr@dAVP~A\\\\fABd@LxAlAn@dAlAVlCPhCMNg@ROL]tAiBh@_@l@kAJm@v@gCb@iCxAgGtAyHx@sCNcAf@gCx@qDF{@\\\\}@@[h@_A^cAWqBC{By@gCi@eAOq@D_BGg@GFAEByAKwCFs@GiB@kBEs@Qu@L_BAFGIMyCDaDEuAU{BB_CWeDo@qC{@sAgAeFs@eGCyAOi@MWMGmDN{GJsB?mBOu@@yFw@cDKiDi@iJMgFi@kB[yGmBkFgAuCeAqC}BoDOsCm@mAa@_AF{@f@uBv@w@La@OkAaAgBu@}AW}BqAcC}@{Cm@wAm@g@IkGe@iCiH_@{@Q_AC{BGq@U_AIGaBNcIHcEa@aAWk@CqDo@}BGgI^aCVgEDoMfAkEI_CSmEq@}@EmDk@cEAu@O}@a@sD_@uLiBuDgA_De@qFe@wD{@kFaByCq@kFiBwAa@wBCyKo@cDFeBIwAUiBGoBAw@\\\\s@NmCVaGfAsBTiGIi@I{C@qJSFILEQB@JSBMNErDS\\\\}BF}@QgGa@Ef@DvAO`GOL[BgDCUPSxB[dAw@fBcBfH_A`Fg@dFSl@o@~@OzBA|DMhFRzCEzBEp@_B~Hc@vDcAjGQ|B]`CDnCGdD@bAm@bDJHjB@ZRLnAKnCRbAU|ABlBMlA@\\\\\\\\bBEl@g@`BUrBo@z@Yx@Cr@R~@JvCIzBuAtE_@x@QTaAEm@H}@AuA[i@CW@EHMvDK^i@|GmApKMvDq@|GM`@g@f@Ml@gCxO_A|H}DvKQt@_AhCiBvGc@v@[nAbBFLHRb@|@RT?j@Ov@B~@Zn@@nD`@~CJ`AZvAJ|AXf@AVwDV{Aj@O~E?tEb@nJh@vIv@rCPtDHrC\\\\`PfAFGH{CHKR?~@XbB?v@IbBFTNDR[fD[b@yBdBKRyBvQPBNAFa@BH\"\n            },\n            \"_id\": \"62694c88f198dc037396597f\",\n            \"id\": 3952020561,\n            \"resource_state\": \"2\",\n            \"external_id\": \"DA7CE5EB-CDDF-4BDF-8E6F-5568E90F307E-activity.fit\",\n            \"upload_id\": 4230476097,\n            \"name\": \"Morning Ride\",\n            \"distance\": 26660.1,\n            \"moving_time\": 7027,\n            \"elapsed_time\": 8751,\n            \"total_elevation_gain\": 105.5,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-08-22T22:51:53.000Z\",\n            \"start_date_local\": \"2020-08-23T05:51:53.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.816201,\n                111.050872\n            ],\n            \"end_latlng\": [\n                -6.812491,\n                111.051138\n            ],\n            \"achievement_count\": 0,\n            \"kudos_count\": 1,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 3.794,\n            \"max_speed\": 8.1,\n            \"average_watts\": 46.8,\n            \"kilojoules\": 328.7,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 53.5,\n            \"elev_low\": 5.4,\n            \"pr_count\": 0,\n            \"total_photo_count\": 1,\n            \"has_kudoed\": false,\n            \"workout_type\": 10,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a3915754244\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"dqqh@otxdTKN?@@@K@kAA}@Iq@Bg@Cc@GmCWyBGoAKaBG_@EsCC]BwBp@cAR{@F}@Lo@?}BM_BQs@EcAKmBW]?a@EkAS{AKQC}BSgAOyAISGy@A}@M_AS{CUw@Ki@QUCy@Em@Ko@EcCk@a@GM?c@Ka@OIAe@My@Oq@SOAMIa@@i@OeAS_AAUIm@EmAQYGUMiAMi@QoDm@c@AkAMQ?WCY?[Gi@BYIMAa@IoBIy@Kg@?k@Gm@A}@I]?eBMi@HICuAIkASQAQD[CwAQSAWDaACwAIk@Gy@A[Cc@?cBGeAM]@}EOs@@mBGe@@qCOYEgADcAEI@_@Io@EG@WGWAQGm@E]AYD_A?e@Iy@Cw@Hi@AeCJ{@?aAJu@DwADo@CcAD[?c@Fm@B]Hu@FeAB_@Je@`@]h@WZQH_@p@[\\\\GLa@\\\\mBn@W?]NYFm@Fk@P{@DYCUBWCwAc@OCc@MYKGGUKm@S_AKIB[?SHMGK?c@Li@V}@V{@b@uCfAc@TkAd@eAZcA\\\\i@T_@VYHk@X_AXyBz@iA\\\\y@b@yAj@]Tq@Po@^m@R_@PCDQJk@RQJ_Bd@w@ZwB`Aq@Ta@Jq@\\\\u@Rq@XQDk@Tq@`@WFWJKHCPFPH~@j@jD?l@_@tAS~@@HFNGZE\\\\c@~AUj@Qz@O`@I`@ShB?b@S|@OfAOv@IRm@|EKl@Oj@En@KZQ~@Ep@@JGRCNAp@G`@?JOp@ARSl@@AC?G\\\\BSBGAD@@?G\"\n            },\n            \"_id\": \"62694c88f198dc037396597d\",\n            \"id\": 3915754244,\n            \"resource_state\": \"2\",\n            \"external_id\": \"43D7E771-CA00-4A60-A266-3C2343FA759E-activity.fit\",\n            \"upload_id\": 4191268542,\n            \"name\": \"Afternoon Ride\",\n            \"distance\": 7569,\n            \"moving_time\": 1548,\n            \"elapsed_time\": 5065,\n            \"total_elevation_gain\": 50.2,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-08-15T08:03:35.000Z\",\n            \"start_date_local\": \"2020-08-15T15:03:35.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.812508,\n                111.051126\n            ],\n            \"end_latlng\": [\n                -6.75568,\n                111.038768\n            ],\n            \"achievement_count\": 0,\n            \"kudos_count\": 1,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 4.89,\n            \"max_speed\": 7.7,\n            \"average_watts\": 72.4,\n            \"kilojoules\": 112.1,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 22.8,\n            \"elev_low\": 4.7,\n            \"pr_count\": 0,\n            \"total_photo_count\": 0,\n            \"has_kudoed\": false,\n            \"workout_type\": 10,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a3860509257\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"nqqh@gtxdTEGDFd@Lj@@vAL|@Bd@FdAFn@@jAHb@?bDAh@Gf@KlEwA~@SVK~@W~@]v@SrAg@z@O`@OTCj@SPKhAYJINC^YhAi@l@Mf@CRCpEA|AEfA?rAGtCA^Ap@GXBtABfASzABz@Gv@Bd@CT@z@GZDXAX@d@E^?K]?SFeA@yABc@@y@Dm@ASBa@Gs@?YJCN?^GXAd@FnAHb@F`BHn@VF@LCX@d@Hz@F?CI]@_@BWHUHGTGr@CNDh@B\\\\HDALURi@R{@^s@H]b@iAXg@Jc@FMRGLCvAZz@At@LDDFPA?H@@Bw@A[Im@E{@Y}@EIRKt@[z@I`@Sd@GTYh@g@`BU^CPYn@GDGh@]jAKRGd@ONA\\\\SN{C|@wAf@qCl@YDaATcAPs@F{@@uBA{BDcE@wELkBB{@Ds@?iDDqAAcAFeBBUBsAXu@^i@NOFCDWDYN_@H]Pu@TYLeAR[LiAToBz@wA\\\\KCHKLGCgANuAEw@H[KoBNuAFWAG[Ka@Gq@U_@Ge@?IEGQKe@@K?[EEKE{BQSGYEg@Ao@@qAK[Gw@@w@KsACKDMb@QVgAx@QHk@f@EJCTS`A@RW~BIf@CVEPIPGXAd@[~BEjAHFHEHAAINOAEIEI?CE@AF?\"\n            },\n            \"_id\": \"62694c88f198dc0373965983\",\n            \"id\": 3860509257,\n            \"resource_state\": \"2\",\n            \"external_id\": \"D1F89A8C-CE9C-44D2-894B-EC0FD7ABAB29-activity.fit\",\n            \"upload_id\": 4130821882,\n            \"name\": \"Morning Ride\",\n            \"distance\": 6450,\n            \"moving_time\": 1618,\n            \"elapsed_time\": 1861,\n            \"total_elevation_gain\": 24.5,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-08-03T22:38:13.000Z\",\n            \"start_date_local\": \"2020-08-04T05:38:13.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.812552,\n                111.051086\n            ],\n            \"end_latlng\": [\n                -6.812436,\n                111.051254\n            ],\n            \"achievement_count\": 0,\n            \"kudos_count\": 1,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 3.986,\n            \"max_speed\": 8.7,\n            \"average_watts\": 54.5,\n            \"kilojoules\": 88.3,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 21.1,\n            \"elev_low\": 10.7,\n            \"pr_count\": 0,\n            \"total_photo_count\": 0,\n            \"has_kudoed\": false,\n            \"workout_type\": 10,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a3749896459\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"xqqh@ctxdT@@OCGEBFAGGJ@FB??CBFCBDDDX?CABDGA@C?AMOUYDCFCPDBb@FFA@FBAs@CGGBK^K~@Bd@AdADfANZ?nAFFCPD\\\\?RFr@@tAPl@BJEH@PE?CWFOA]Sl@Ab@@bAKj@Qn@WfBg@~@[zBk@v@YfDcAz@SvDqAd@S`Bo@l@OhBM|A?bAIhAA`BB`BEd@@NCjE@tBKfEIj@@|BMdADv@Ip@?jCg@v@WjBa@v@SnAe@j@ETHLTLrBHvFAZD`BAbCDtAAvA@r@AfB@PALDx@Ej@F^AZ@F?\\\\@f@IxDBTA\\\\BTAVB`ACZAbABj@CfAAx@CRDdACb@H|BEvDDfBBPAbABL@ZE|@?bCE~A@nAEb@AzBEX@RC\\\\@ZBNApBBZI~ADlBE|AFv@AbA@HGr@Br@AhAEjB@dAIbFI`ACvAWbCA^Ox@Ex@ObAE`A[nBAf@Kd@IhAQ~@@TKf@[|CWxAQhBG|@Kn@U|C?^GXEj@GZ?ZCP@FGRQx@K|@UnAEfAWlCUzAEl@AVQfAGzAKl@]jEKt@Mf@Ev@a@~CILG@]EEIB?BCUVGPBLBECCBIDOLGBIAEHJRDFH?d@E^KXGJUB_AUaBu@mBm@mA[{As@cAQsCgAkA[{B{@}Ag@eDsAkCu@qAk@oEuAkAg@w@SgAe@iBk@e@SiA[aBo@{@WkBy@gBk@e@GcBq@WG_A]g@W_@KqAs@o@Su@]c@MWMcGwBqB_AuBq@u@a@sD_BaE{AiDyAwBu@_CeAuAc@_Ac@mC_AyEoBgA_@sFaCq@Q_Ac@eAa@yAu@oAg@i@OqCkAuBeAgBu@gDsAq@S_Bm@{BcAqAa@SOs@YOQAUBWZ}@P{@\\\\eCNg@De@J[@[BQTo@@g@DMBa@@o@H_ALUF]@YAMH_A@g@RaAFi@@o@NGnBUDK?i@CQB_AAe@Ge@Cg@HyDAaCYwCKKI?yBTs@Ay@D_AAy@GMCGMAWRcC?u@@eBCy@F_BJy@F{APsADw@RoB@e@HYHcALg@FsANcABo@FS@]Jm@PcBAa@HkAZwB@YVqADk@Lm@RoBHa@La@PeAP{@H_AXsAj@BVLdB`@~Fv@|@FzADrBVvF^z@PlCTxEt@tHh@j@AvBWz@Qv@WzAYfACzI\\\\~APdGXlBVDDEL@Bn@@\"\n            },\n            \"_id\": \"62694c88f198dc0373965981\",\n            \"id\": 3749896459,\n            \"resource_state\": \"2\",\n            \"external_id\": \"AC4B6A75-E48A-435D-8837-448F8DBF5BE1-activity.fit\",\n            \"upload_id\": 4005941174,\n            \"name\": \"Afternoon Ride\",\n            \"distance\": 15072.1,\n            \"moving_time\": 3145,\n            \"elapsed_time\": 4100,\n            \"total_elevation_gain\": 72.6,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-07-12T08:52:16.000Z\",\n            \"start_date_local\": \"2020-07-12T15:52:16.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.812601,\n                111.051061\n            ],\n            \"end_latlng\": [\n                -6.812597,\n                111.050807\n            ],\n            \"achievement_count\": 0,\n            \"kudos_count\": 2,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 4.792,\n            \"max_speed\": 9.4,\n            \"average_watts\": 75.7,\n            \"kilojoules\": 238,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 22.7,\n            \"elev_low\": 4.9,\n            \"pr_count\": 0,\n            \"total_photo_count\": 1,\n            \"has_kudoed\": false,\n            \"workout_type\": 12,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a3691033779\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"zpqh@usxdTqBE_WgAi@BqD`AcCP}FSwNeB{PsAej@iJmH}@mXkBuJQm]gAuKk@yS`@}Ih@cAd@eDxEeIjBmBGeGuBmAIeErAyHnDkJfDwAx@mIzCqDdBkT`IcCnByCf@sB|@_Dr@kCt_@q@nGtAp@Cz@Qv@[\\\\aCUChBWpBm@xCy@bCm@T_VmEaJe@MXg@hGSjJ_O|@q@Pq@~I}CdWBbApBrKB\\\\M\\\\aBt@_BXkDnAqS|Fuf@xMc@^yDvIuArAqFnB_Bz@}P|G}Bj@{BT_]dAiP`AcCv@oBlBmAp@s@HcKk@gRwBiJq@[NCt@yBdKa@lC[Z_Fw@s[gHoIy@iIaAaWyEcCQiUwDqKkA_ESkEq@uGa@sGaA{AjBaD~Bo@lAu@^oAhBq@h@yInFWHWGwGxEwBdA_AB{KcAqBc@o@BwBbC_IbLkClEqGfIiR{A_@~FcAlGiE`E_AxAqC`C{DrEmBdD}ApDy@hAE\\\\[`@gA~CeAlAuEtCeKjId@`@jAb@?La@nBaDxHyAtEsCpLAzCk@zCJdIIl@eBxC[vCw@v@[p@_CtNiAjB{@xBe@|CRxAGn@JtCb@dGSfDJbC[~@Mp@G~FYzCb@vAFzAITLLK@@X}@lBe@zBGjAwAjFfFr@\\\\^NnAIz@sA~Ce@jBz@XTvABnAJNvIgBrA?BHm@JQUPD?LGWHNoBRnASxBEj@OfC|@lHnD`AMXg@Fk@\\\\ATd@@hATJRUp@eEf@qArLyPdBcD|Au@lB{ApH{IhCuB`\\\\aOzPiGxT}DxH}B^Jj@bBn@r@fAIf@Uf@wB?cBr@uBbJwF|B}B~P{UzAuC^e@^E|AqCf@MrBcD~GoMnPeT`DqDbE}CbAqAhL_KjFmDbAeAhR_N|A_BzNsLtLcLj@gAjC}M|@oGfBiIzCcQbBItJ~@ZCPS?^hAB|Dp@bRrA~Ak@tDqCjBk@jTgApJMdKe@tFo@vEaBhOsGpE{AtAmA`E}IZ]vGsB`YiI~Bc@hOuEHO{@eEw@mHZyGc@mDh@oHIeLPY~YaErEWrMRpAIb@e@t@_LvCBnCTn@aBjInAjBFbNlCjDkRNUPK~BG~MTbLGtMkAl@AvKdBrX|Cdd@~F|K~@|TrCbz@lJfFlCpJbE|GdCrJlE|_@tOdAsHR{G\\\\oBN{Dt@wFDoC^yDEyC\\\\sEGgFRiB_@gEh@{DZ_I~@sK\\\\uGHwBa@}DAiDt@uMl@K~G^zBQ`E_AhAEnLv@~KVLY\"\n            },\n            \"_id\": \"62694c88f198dc037396597b\",\n            \"id\": 3691033779,\n            \"resource_state\": \"2\",\n            \"external_id\": \"15C7A052-9C8E-46C6-98DB-58A08525C2DB-activity.fit\",\n            \"upload_id\": 3941394417,\n            \"name\": \"Morning Ride\",\n            \"distance\": 50768.3,\n            \"moving_time\": 11563,\n            \"elapsed_time\": 17438,\n            \"total_elevation_gain\": 461.3,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-06-29T23:26:10.000Z\",\n            \"start_date_local\": \"2020-06-30T06:26:10.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.81246,\n                111.050996\n            ],\n            \"end_latlng\": [\n                -6.812511,\n                111.051191\n            ],\n            \"achievement_count\": 9,\n            \"kudos_count\": 1,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 4.391,\n            \"max_speed\": 16.4,\n            \"average_watts\": 76.1,\n            \"kilojoules\": 879.8,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 340.2,\n            \"elev_low\": 4.7,\n            \"pr_count\": 5,\n            \"total_photo_count\": 1,\n            \"has_kudoed\": false,\n            \"workout_type\": 12,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a3687459580\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"|pqh@cuxdTFHRFbAPpCTbGRtB?jAI~AUhCo@|C_At@Y~C{@~IyC`AUdASdAKzAInAAtE@bEInCA|AElCMnDIfCAtAI`AKl@IzA_@jD}@hCcAPKxBcAtJwDdCm@rCc@h@EpBI|A?pBBhADxDV|@B~@FzN`@vC?PBbA@zDAPCnA?zD?bC?j@BjG?hBD|@HXF`A^jAp@vFrCp@n@NRVd@X`An@`F^rBTn@Xh@jAtAj@`APr@F^@p@A~ADXDLLTTNZHhBTrCTxIXdHAT@rH?dADpAPzB\\\\dK|@~Db@|Cb@~AX|JlAn@L`AJ`Cb@nC^~Fl@fD`@vHz@zAH`A?~CMdAAr@CvBSp@?\\\\BXJt@h@`CxBh@^l@R\\\\D^D~B@rCVdEXn@Bj@F~@@fD?tAFbBBdBH\\\\HXJJFPTJZFl@CdAEd@UpA_B~GiClOQ~AKtAE~@@vAFv@Jt@rAhFdFnPb@zAZxARtA`@pDt@|HxAfNd@fDv@dFHx@Bv@AhBYtGIjEI`BGj@ELMLW@[GdAQ@KLwD\\\\uM@yAIwA}@yFmB_OaA_Lw@kGa@oBmAeEmAkFuDaMQgAIcAAcADkAF_APyArAuHfD{PPoA@o@Es@Ua@QSKEk@Mq@E}CCEAI?OGEIFYB?HHSNoA?MCgFE_DMeFMgAEkAIc@IiAg@o@g@wBsB[Ug@Uo@EeCJqCBmDPgAAw@EqC]e@AgD]uHgA}Dc@oFy@wBUcBKgBU_BWuCWmFs@iCWiAQSAyASgBMuC[wCOiAEmIDwABgC?kDSyDM}Ec@[KWOIIMUIo@@aBG}@Gg@Oc@u@mAgAoAi@eAWqAOeAYcDKq@Kc@Yk@k@g@cAk@_@My@c@gFyBeA[kAOsBEaCAMAeCEwP@iICgDMaDGaDOyBQmFO_CEQBeA@yAH}BT}AXi@PaI`DsCdAaBx@k@TkCv@kD|@cC`@gALwCJyC?_CDOBwC@eBFqCBO@yFCuA@uCLm@J}@RsBx@gGnBqA^OBsK`DiB`@y@HuBH{@CoIe@gBUzD^mBOmAO\"\n            },\n            \"_id\": \"62694c88f198dc0373965979\",\n            \"id\": 3687459580,\n            \"resource_state\": \"2\",\n            \"external_id\": \"3030524812_c5da12921ad1f98c9ef9222102e1687ea248d8c7.gpx\",\n            \"upload_id\": 3937500829,\n            \"name\": \"Afternoon Ride\",\n            \"distance\": 22719.8,\n            \"moving_time\": 3809,\n            \"elapsed_time\": 4623,\n            \"total_elevation_gain\": 0,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-06-29T09:26:52.000Z\",\n            \"start_date_local\": \"2020-06-29T16:26:52.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.81247,\n                111.051224\n            ],\n            \"end_latlng\": [\n                -6.812718,\n                111.050995\n            ],\n            \"achievement_count\": 2,\n            \"kudos_count\": 1,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 5.965,\n            \"max_speed\": 14.6,\n            \"average_cadence\": 41.6,\n            \"average_watts\": 91.4,\n            \"kilojoules\": 348.3,\n            \"device_watts\": false,\n            \"has_heartrate\": true,\n            \"elev_high\": 11,\n            \"elev_low\": 11,\n            \"pr_count\": 2,\n            \"total_photo_count\": 0,\n            \"has_kudoed\": false,\n            \"workout_type\": null,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a3682389622\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"`qqh@itxdTA?INE^KxBAvABZDLHJTLv@Rn@JhA@FATKFMD[DqBEcEI]QKu@IgAAy@GQ?[HGHGT@b@BVRP^LBB\"\n            },\n            \"_id\": \"62694c88f198dc0373965987\",\n            \"id\": 3682389622,\n            \"resource_state\": \"2\",\n            \"external_id\": \"3030524812_ff8a9b23ae556bef54198ff4e11d16b36c19a497.gpx\",\n            \"upload_id\": 3931978597,\n            \"name\": \"Afternoon Ride\",\n            \"distance\": 762.1,\n            \"moving_time\": 264,\n            \"elapsed_time\": 351,\n            \"total_elevation_gain\": 0,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-06-28T09:58:52.000Z\",\n            \"start_date_local\": \"2020-06-28T16:58:52.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.812484,\n                111.051094\n            ],\n            \"end_latlng\": [\n                -6.812585,\n                111.050743\n            ],\n            \"achievement_count\": 0,\n            \"kudos_count\": 1,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 2.887,\n            \"max_speed\": 5.7,\n            \"average_cadence\": 26,\n            \"average_watts\": 55.9,\n            \"kilojoules\": 14.8,\n            \"device_watts\": false,\n            \"has_heartrate\": true,\n            \"elev_high\": 11,\n            \"elev_low\": 11,\n            \"pr_count\": 0,\n            \"total_photo_count\": 0,\n            \"has_kudoed\": false,\n            \"workout_type\": 10,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a3676308162\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"pqqh@gtxdT@JYUPCRXGMLe@c@J@LIDy@DuX{@q@FkD~@oCTwACgVqCaOuAgn@}JsHs@eYcBaYo@sXaAkGNgCTgILeFh@c@XoBtCeAhAqIfBaBQgG{BeAA}FzBkw@~ZoB~@v@xC\\\\hCAVu@hCFh@O~AkA~CuBrOWbAWHwE]y@`FSNkBBY|@KdBY^sCQaA[Gg@NqANQl@CbDn@N^I`Ai@h@}AG]Li@jBDNq@tE{DjUgAfIqCzOi@fC]z@iBJwB^uCfAyLbDwBv@aJtBiFjBoIbBmAl@_HxB_Cd@_FdBo@No@CoDbAwAp@cI`CyLtC}@r@wC|GcAdBoAz@wBt@_Aj@aGvBgLxEgBf@_Np@{E^_BC}DZ_IH{CHaFf@eBh@kBhBcAv@qA^_Jm@aHu@}Fw@GITOa@XY@sKy@q@DaApF?JL?a@hAgIvc@cAjE}FfGmF|E_ErCyJ~IeIxGcHjEgLtIqJ|ImDlCyEfFmEbFaIpKsKpReEjF_Q~VeEnE{InFY\\\\m@dBAjAq@dD}@`@}@Ac@k@g@{B_@IcBn@cDp@}DnAgJhAiGnAsLtE}GxCuKlFiH`DeDhCuGtHiC|ByBzAo@|AuFtHyDvG{@pBe@fCGn@[CSSQ_BKKOD@f@_@p@a@Ve@AeEoBqBsAgA_@w@Sw@RmA@QILCb@Dv@?|@MdC~@fHnDz@M^q@Fi@LGXr@LbAZHj@_ETk@tE}HxFyHdAwBnF_EjGoHjDyCrRoJnUgJdGcBnMoBdDcAbG}A`@Hb@tAx@|@z@Dx@]l@_CHcBv@{Bv@y@zGsD~BgBv@}@jIcMrKeOdNuUzIeLtGwHjJcJrIkHpPyLvD{BvCyB|ImIhHaGhBkApCgC~CcDhBcCl@kB`B_Kl@cCp@cFnCmM|@wGZyAPUfNhAnLrAxMv@`AOzDgDhBk@rKq@`^aA~Gi@vYsLtBk@bBaBbDsH\\\\o@`@UfL}CvKmD`Ci@zPiF`Cg@fA_@QaCwAiKd@qG_@yD^mIC{HKw@YeVHmGr@cFp@kJ^aAjKb@rDF`Kf@jIh@~KVlRxBvIjA^PJr@JJxFZl@NvORfGMxHB~K_AZOz@ExJbBzIt@~WvD~UvCjv@vI~NnAdG`AlQtBdAXlBfAjKvEjNpFX_DzBoPl@aIRSxBSLMWyGDyF_@mDsGT{AEWMR{CL_J^aGd@{CxAkO@eAb@eEn@gDTkCvAcHTIx@DxInAvf@hEhCGxFmAjKZpMt@^A@SKA\"\n            },\n            \"_id\": \"62694c88f198dc037396598b\",\n            \"id\": 3676308162,\n            \"resource_state\": \"2\",\n            \"external_id\": \"1EF5B10C-0264-4148-9A82-887B4F2AC166-activity.fit\",\n            \"upload_id\": 3925306983,\n            \"name\": \"Morning Ride\",\n            \"distance\": 48692.2,\n            \"moving_time\": 9675,\n            \"elapsed_time\": 16547,\n            \"total_elevation_gain\": 417.5,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-06-26T22:03:46.000Z\",\n            \"start_date_local\": \"2020-06-27T05:03:46.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.812566,\n                111.051084\n            ],\n            \"end_latlng\": [\n                -6.812489,\n                111.051154\n            ],\n            \"achievement_count\": 8,\n            \"kudos_count\": 1,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 5.033,\n            \"max_speed\": 16.9,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 336,\n            \"elev_low\": 4.7,\n            \"pr_count\": 6,\n            \"total_photo_count\": 0,\n            \"has_kudoed\": false,\n            \"workout_type\": 12,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a3666971365\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"zpqh@gsxdTAEvCDXC`DRrBDhED^CfAU`FyAdB]|@_@p@O~Ae@hAe@dASn@_@f@KtBs@`@Yj@S?HKF[Hy@X]R]Dk@REFU?X?pAo@d@KvAk@^IxAO`DI`D@nAElADl@C`@BzEKBAGARG`@FfIS`EAvE}@fF_BNCRBBGR?ZTLbA?`BDd@@vAHdACZ?hBHbI?bBCj@B`@DrF?jCBjAGbG@dABp@Az@DZCz@?hDElCD`@DxDAzAEj@AvEC`AGl@Az@BPGjCB|AC\\\\BzGEbCDnBMdEDr@IfF@dA_@pDOr@OxBQ`AWdDUvAIfAc@|Cm@~Ge@rCCx@MfA?XQ~@GlAi@jF@`@Oh@UpAKxA]jBAp@Ix@M`CE\\\\St@GbAId@Ct@Ot@A^]tCm@hEv@J|Ab@rLjExE|Af@ThEzArHbCl@ZzFhBx@\\\\xCx@~An@fD`A`@R`JxCnAh@`Cp@HHzC|@rBx@JApC|@bCbAp@LzC`A|@`@|Bl@f@TDk@Ha@Bs@AyBNs@x@AHBJPhBVWINHSMQSDCXTE?@DJ?E??NAK@SBCBRE@DQAE@?A^@SO`@_BOIUYI_@NIXBvAAz@QzAMRK?g@SQAk@UyCy@yG_CkIgCcDoAeAWq@YcDeAs@]cBg@sBw@o@O{@]s@Qm@Y}DoAiAi@_Dy@cAc@yC}@}B{@iFaB}Aq@w@Q{@_@iDqAs@Qg@WqCy@s@]cBk@u@Qc@U{@YiBi@_IqCyC}@kGaCsEyA_KoDe@W}Aa@aDmA}DmA}D{AuHgC{D_Bs@Qe@Yy@S_@QeBk@yBgAk@M{DgBuAg@m@_@oBo@cCqAa@IgDuAgEuA{CqA{A{@mAe@s@a@_AUgC_AmCgA[E}Ag@qB}@sAe@uAi@IK?BFKBo@PoAj@}HFcBNwAJ_CHk@HeA?u@L_ADq@dAiM?sBJg@Bm@D{ACi@@Y@FC?BA@q@F{@IqA@s@LmBO{AIW?c@NaCNc@Jo@BuAN{BLmA@c@H]A]FkALeAHoAHe@Dm@Au@Ji@BkAHw@Bu@?}BKwBA{@Gs@FcBAu@JeA@}BR{BAa@JaBDI\\\\G|CPnBXpACfAIfAQbBi@XMb@Gx@@fE^|@EpBFbIl@lCJ@EII?M\"\n            },\n            \"_id\": \"62694c88f198dc037396598d\",\n            \"id\": 3666971365,\n            \"resource_state\": \"2\",\n            \"external_id\": \"D9975546-AE91-44A4-B46B-A21F63C40FE3-activity.fit\",\n            \"upload_id\": 3915108946,\n            \"name\": \"Morning Ride\",\n            \"distance\": 18582.9,\n            \"moving_time\": 3837,\n            \"elapsed_time\": 7024,\n            \"total_elevation_gain\": 65.4,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-06-24T22:39:47.000Z\",\n            \"start_date_local\": \"2020-06-25T05:39:47.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.812454,\n                111.050927\n            ],\n            \"end_latlng\": [\n                -6.812474,\n                111.05117\n            ],\n            \"achievement_count\": 0,\n            \"kudos_count\": 1,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 4.843,\n            \"max_speed\": 9.7,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 22.8,\n            \"elev_low\": 7.3,\n            \"pr_count\": 0,\n            \"total_photo_count\": 0,\n            \"has_kudoed\": false,\n            \"workout_type\": 12,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a3661738555\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"vqqh@atxdTEC@LLFOCpBBf@JxABfBPtDLtCGt@U@CI?VCfA]hASnFcB`Co@dDcAf@[`@G~DwApEe@nBCdFF~@ErD?fCOx@FzDOhA?~AG`ABhAGfB[nI}Bp@ExAo@n@a@rBm@b@]nCsAhBq@xAa@|Eq@bDOhAFhHHhBRxABpBNpGTfLChBDlLC`KNzALfA`@|DtBzBbAfBdAZ^VpAF`BRhALbBL^RhALVZ`@rBtBb@t@Bv@KbAK~BFPf@TtANhABhDXlAPrEPdAA^GnCFfBGz@BdFCvDR|Ft@fBJ`D\\\\tKtA`CP|GdAbADz@RlBTxALxDb@fJpAdE^fBJ|GYdCBbCMJEHo@FsEFwADSC{AJiEAsCJuBFYB_BLcCCoAHkAHwDHc@NE~CCpCWjGYz@?|AObEQlCCxAOrAEvAKdAAdDSnCGhAQbDEdAIrA@dBEl@GbABp@MzAGbEAdAGfCJ~@Ed@IfCSh@KxBm@vCaAbG{AxAWz@GjASbB_@hAY`Bo@nDw@l@PTTr@tARj@\\\\j@VrANd@PZXLZFjBSfAEjCHjC[d@AVG|CQhB[TSDUV]lB}Bb@OlAYl@YHo@?UXcBNa@b@q@Rk@Hg@PW`@gDAOSm@?Sq@iBEi@Ba@B?Cj@DTv@tCDd@Ah@S~A]`BQd@{@bBOr@OxAIT[PkATq@XmApAkA`BKFiCn@oCPEBB@GH[C{CZQ@yBS{DPKCYSi@qAIm@So@cByCSSg@G}@JqAj@mAZuAl@wDj@qALkCf@}F|AeDjAmDl@qCZcFIqCJcB?uELcDRaEBcNr@{FR{BLeCXeEPmBAeDJyDTqDJs@JoB@uHb@kADgAA}@Fi@AMGOs@OcBIGkEBkCSQFEjC@|@EFyBR}CEeEFoAJkA?UD_@Cq@F}CG{EDqGQ}EKsDa@iACaBOwDEs@MkBMeAD{Ea@gEK{BWaE[oAAaAK]@kEY{AFu@MwCA}@Kk@JYZk@XaB_AeBw@gBkAsAe@oBK}AD{AIsAFeAIcI@_ABiBG{ENeBC{A@uFWo@?k@I_EQuBQ}EIcBBcAE}BHk@Fw@Rw@F@E]MAKRaAXu@{Aa@k@KTyA`@cAEMS?TREGmA]s@AsBYSROr@{BfGWd@Ux@OZ}@dDWVJAWn@}@p@QH{JdCoB\\\\kAHmECsS^eEC}DFcAHoARuC`AoDtA_MlD}Bv@aBb@sALaB?sBG_Ia@iBUBA?UNEACHB\"\n            },\n            \"_id\": \"62694c88f198dc037396598f\",\n            \"id\": 3661738555,\n            \"resource_state\": \"2\",\n            \"external_id\": \"7B88CA9B-F69A-465F-B280-1E170E94CC4A-activity.fit\",\n            \"upload_id\": 3909408844,\n            \"name\": \"Morning Ride\",\n            \"distance\": 24124.9,\n            \"moving_time\": 5557,\n            \"elapsed_time\": 6905,\n            \"total_elevation_gain\": 200.3,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-06-23T22:34:35.000Z\",\n            \"start_date_local\": \"2020-06-24T05:34:35.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.812591,\n                111.051059\n            ],\n            \"end_latlng\": [\n                -6.812552,\n                111.051199\n            ],\n            \"achievement_count\": 1,\n            \"kudos_count\": 1,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 4.341,\n            \"max_speed\": 11.5,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 125.2,\n            \"elev_low\": 10.7,\n            \"pr_count\": 0,\n            \"total_photo_count\": 1,\n            \"has_kudoed\": false,\n            \"workout_type\": 12,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a3600823028\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"bqqh@auxdTFVGYb@FFCCCCJLL^Nn@HzFZvGJ|@KhOmExJaDb@YjBi@bESzGHvBOxJK`BK|ICtE_AzDcAjAe@\\\\GVRR`C?nDH~@DfDFjXF~BCrHJzDIvUKjCIlEBfFC`NGbCE`OEx@w@dGUxCg@hDUxCwAlMMvBqAfLYfBcAxKIfBa@jDo@rEGrAi@zCCx@Sl@e@CeG}B_FyAgAk@oBi@cCiA@JsG{BiCu@eL}DsCmAwEwAiGgCiDcAkEgBy@QkBs@mHeDsEaB}DaBYSyB}@_ASqHaDgC}@YS{G_CoHwCcDyAyBo@o@c@qDqA][sL}EgB_AiDeAuD_B}JaEeC}@s@e@}CaAgBaAqBaAiBm@{CmB]Kw@S_BJkEw@wD]mCc@aCO}h@cGcIcAuE_@{Cq@w@AmCg@kCWsImAsAGkH}@aEo@kE[uDy@uDm@oDg@mB?oB_@{D]a@QyB_@aBP_Bb@wBHy@PoD^iBMmCLwBKkBFEK_@CyGD}BKq@@CHsCImFWu@l@gBGeB[Wi@HsCeAeMKRBPGAfBhL|@NtAl@fAJLV@l@Kn@WVc@F{@I]RQbBWx@aBtIQ~A[jB[dAGlAs@~Cu@`F}AfIi@pDQ|AsAfGa@N_BBoBf@wE|AsLzCeH~BcFrAyM`EkANwAl@qEdAQGFWZQMK_CCUMGYPH~@FDOCHz@DlDMAqFKIwILGJHvAEdCFt@?jBdMoDW_AUiCYoAo@qED{CRsCYgC\\\\O?LNNKZD`AG@KOWgBf@wH?gL?]LShIqAhBMpEq@dIw@bCKxE@nHTZKvDn@|BFLSAUh@oC@w@tAQvABTcBEqAJo@?s@LE|BTr@LFHGEpAHfCh@tDh@bA`@dBTn@cEV}@R_BTy@h@sCDy@FSXSbCA`@HzABrCKjAHpK?EZKDKOHU?Q?T[H?GFFNKOAAIz@TrCC|J_AdAM@GjA@zJbBvFf@`Fl@p@PxMvAhCd@tCVzGfAhMpArDj@tFb@~InA~J|@xEt@bFb@fFl@|BXjCb@xJ`AlAVpF^rEj@bDQTOGqEFSdCwAhBsApGSBIe@aFDoCDWLGB]H{GU[KqA_@y@?cAUwCEgBXiFJa@NyAH{Bz@aC?sCHSDyAWa@DgALOb@CFmARY`BFpAIjCHPe@RoCLi@d@gErBaKLCtE|@pAFnAV|Kz@bEf@bABbEp@|Eb@z@?fC^z@CpCg@vBk@rAMrBNjDBpANjJ^xATF`@r@HHHCN\"\n            },\n            \"_id\": \"62694c88f198dc0373965991\",\n            \"id\": 3600823028,\n            \"resource_state\": \"2\",\n            \"external_id\": \"3F920986-881C-4E82-844D-7330DE12E96E-activity.fit\",\n            \"upload_id\": 3844099750,\n            \"name\": \"Morning Ride\",\n            \"distance\": 31937.4,\n            \"moving_time\": 7029,\n            \"elapsed_time\": 11094,\n            \"total_elevation_gain\": 113.7,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-06-11T22:50:52.000Z\",\n            \"start_date_local\": \"2020-06-12T05:50:52.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.812499,\n                111.051211\n            ],\n            \"end_latlng\": [\n                -6.812621,\n                111.050654\n            ],\n            \"achievement_count\": 0,\n            \"kudos_count\": 2,\n            \"comment_count\": 1,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 4.544,\n            \"max_speed\": 9.1,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 25.4,\n            \"elev_low\": 4.2,\n            \"pr_count\": 0,\n            \"total_photo_count\": 0,\n            \"has_kudoed\": false,\n            \"workout_type\": 12,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a3591986612\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"zqqh@muxdTe@NJ@DZPC\\\\?d@HT?fBRfBJpABnCPfB?|@MbBc@XEhCaAvBg@fEoAf@InDoAl@On@[xBw@fAK~@Cp@I~BG`AA\\\\@|@C\\\\BpDAjBI\\\\BtBGj@?l@EjEGhB?`@CbBCb@Kp@Gb@IjEoAlBc@JE?DPCtBcAvDwA|@k@f@URE|BcAt@UbAWbDi@bCMbE@^Bn@@`FPnFZpELxAJ|H@xCCt@Bd@C~A?tAGnADdGBx@DvBA`@@NCjAFHA?BACC?LHvA^t@d@v@ZRDRVx@\\\\vAv@LD|@g@^Kz@AnBHJA?ETFNAd@FlDJXFz@AnBRbBDZD|@Bz@LnBBpCTh@ChDPn@?xCTbBHbALzBDnBLbCDPD~AJd@Jb@@d@DNC\\\\Df@CVFDCxAFvANnB@XGxBDn@IJEAAO}@]aAEUC_@@UGw@ESMQGUMk@Eg@DkAEqBI{@Au@OcAEo@CeAEc@?m@Ke@?c@IYG{@@_ADu@?[Q}BGQOaAA_@Gk@Ag@?GJMR?`@HR@n@Qd@WXUBIEQDQZYf@BBENo@HIjAVN@LCC@DSDmBCc@EGBG`@EJKDyBNgB?QIy@Se@Ay@GCa@BEGAI@m@DEZ?DIAg@Iy@DqCEI_BIaF@wCRgFl@oBF_BVYCe@Fy@DeDf@u@Pc@T_@`@mG~CoAz@c@Pm@Z{@l@y@z@[NSR[Ha@V{AbBCJe@n@m@f@GLa@ZMV[d@gAn@[\\\\_Ah@o@j@g@RcAJ_Dn@m@HcA^aBBw@AoAJmB~Ba@ZSb@Id@C^CfACXAlAK`@c@r@w@t@q@VUT?hBCVCBKf@Ix@IlAAz@I\\\\A\\\\E\\\\?BADC??CCBDA?DW@g@Wq@QoBK[@cCEmFEuE?oBFg@CeB?kCBiAEeCBsCGyAImCGuCSuDQm@G{AAwAEkC?sA@cAFm@J[@mATwAZ_A\\\\QD_A^UNsAd@WR]JKH{@XQJWR{@\\\\OB@E?B@A?CQ@IJo@\\\\eCx@_Ch@}Cv@qB\\\\kAJ}BIuBF_@FmE@YCmBPQAu@DoBGqBDWCw@B[A[D_AAQBi@?wANoABu@Pi@VeCt@kAd@s@N}@b@aCj@sBr@k@LsBl@_@FYLo@RSJo@HWHQJm@Ju@B_@CaABmIe@{@AcDQQFFND@L?h@FJJAB\"\n            },\n            \"_id\": \"62694c88f198dc0373965985\",\n            \"id\": 3591986612,\n            \"resource_state\": \"2\",\n            \"external_id\": \"8C05E605-2666-4261-9C8A-088160E67A83-activity.fit\",\n            \"upload_id\": 3834789866,\n            \"name\": \"Afternoon Ride\",\n            \"distance\": 14666.4,\n            \"moving_time\": 3193,\n            \"elapsed_time\": 3545,\n            \"total_elevation_gain\": 82.1,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-06-10T08:41:12.000Z\",\n            \"start_date_local\": \"2020-06-10T15:41:12.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.81262,\n                111.05127\n            ],\n            \"end_latlng\": [\n                -6.812626,\n                111.050722\n            ],\n            \"achievement_count\": 0,\n            \"kudos_count\": 0,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 4.593,\n            \"max_speed\": 9.2,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 31.2,\n            \"elev_low\": 10.7,\n            \"pr_count\": 0,\n            \"total_photo_count\": 1,\n            \"has_kudoed\": false,\n            \"workout_type\": 12,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a3576517981\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"pqqh@ktxdTj@Tt@J`DFpBLxHHr@QjC}@tHsBrGsBnDsApBg@rFYxFBrAE`D?zCIfDQrJKbDm@nEoAPGBEESK?HG`@Pb@Kn@?PNJ~APfICfADdB?~CHxEC`FD|CDfPEl@DxB@jDGbEBdCKbGG`KCfDE`@H~@Ch@Dt@@~AQhJBnAErBApCIhAa@bDG|@[hCw@xIYpBkA~Ke@~C?r@I\\\\IxASpBUnAw@jH?Zi@bEKzBIXMfBGXSrBYvBInA]pBKdBHLpB`@bEvApA\\\\d@TbCt@`A`@dEvAj@L|ChA^R|DxAzBt@fCp@|ChA`KdDbKlD^HfCdAfCv@r@\\\\bFpA~K|DjGnBNE?e@Hi@FgAEmBHg@lANBL`@N|@DTGEGK?IHF?KBHDF@IC@@AGBIGMe@CCADCIKbAh@tB`@JF?JsApE]nBHN`AP`Bb@|G~BrGnBzDvAfD`ApDlAXNrGpB|Z|J~I|C~KnDjG|BrA\\\\vE|A`DnAvCz@dAf@pC`A`FxA`IpCnH|B`CfAj@J`Ab@jFvA`Bp@fElApGbBzCbAfLzC|KbDrHrBjB`@rNvDN?DEGWa@s@eAqCiCcG]q@[_AIKm@_BYk@Yy@U_@Ke@_BoD]cAc@w@k@uAa@oAkAgCY{AECFUTwIT}FAwAD_AGqBWsAAk@i@oEAm@_@sBIsAg@eDc@{Dk@{DGs@]gCIeAkAmILwCEAL{@CQ?WJc@R_ERaC@aALkBReEH}CJkALkEZsFDsBH_A?sATkCCu@L_CAq@LmB@{Bk@gE{@yEE}@Me@yBsUWuAO}Ba@qCm@iBcAiDm@kC{@wBgBsGk@aB]yAEu@Hy@JcDFc@vAoHH{@Po@L_A^yAPoA\\\\_BNeAJ[\\\\kBZuB@_@Km@EIQOw@MmCEg@@cDOoA@uBOyDCyFW_A?s@IuAEo@[_@a@}@q@_CeC_@OoCVoE?uERsAEeLqAgFo@uDm@wCYaEq@sAGkEk@aN}AcPcBcCIqGB}ACcB?aCF_Mq@gE_@WKCK?cAPwC?u@s@gA{BcCYm@i@kDWiCEw@SmAW[iAe@cCsAe@OaAg@oAs@mBw@YCkNUqFFcBEaFHgBGgABaCA}GSyCQaF[eIOyBFgBNqDj@oAb@gBx@c@JsCvAwBp@sCpAqElAsFhA_BJaACuLXwACkDJyKDuDRs@PyB|@cDdAqRxFwAZiAJkA?u@E{@@yIa@iBUGSDC\"\n            },\n            \"_id\": \"62694c88f198dc0373965989\",\n            \"id\": 3576517981,\n            \"resource_state\": \"2\",\n            \"external_id\": \"9A3BAD64-C7CA-4247-A879-C580780551F3-activity.fit\",\n            \"upload_id\": 3818493927,\n            \"name\": \"Afternoon Ride\",\n            \"distance\": 28925.1,\n            \"moving_time\": 5126,\n            \"elapsed_time\": 6684,\n            \"total_elevation_gain\": 106.2,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-06-07T08:24:07.000Z\",\n            \"start_date_local\": \"2020-06-07T15:24:07.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.812561,\n                111.051102\n            ],\n            \"end_latlng\": [\n                -6.812448,\n                111.051158\n            ],\n            \"achievement_count\": 0,\n            \"kudos_count\": 1,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 5.643,\n            \"max_speed\": 10.6,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 30.7,\n            \"elev_low\": 10,\n            \"pr_count\": 0,\n            \"total_photo_count\": 1,\n            \"has_kudoed\": false,\n            \"workout_type\": 12,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a3575008816\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"juqh@gsxdTRCJIRHn@HvA@v@LpBJZHFICIBG^JTB|@?z@KvA]VMhFaBb@CbBg@dASb@U`B_@XCRK`Ba@|Ak@^Uv@]R@t@S^C^Iv@@\\\\Ej@D^EtCEfADx@Cz@DdAIp@Fr@El@BbBEfAOnADn@K\\\\DPEz@A\\\\Dr@?h@El@B`AGx@OTI`BWNIbBa@pAq@t@AHEFEFOHGXARQf@Qd@Y|Ao@f@Yv@Wj@YhBo@ZOp@Kh@UvBm@`@GPDf@AhAQ`@A\\\\I`@Ah@@^EjCHz@Eh@L`@?bAJb@AhALlADbANt@APBTCp@@VDp@Ap@Jz@DDB\\\\AvABl@C~@FLElCEZDv@BvA@n@Cx@@jAG`@?VGv@FbA?f@DbACn@Fr@C^?PCn@?x@F|@EtBNp@RR@p@ZdBdA`Bx@dAr@`A\\\\`@ZNRLp@\\\\`FTfA@d@JPNp@HPRRjAbAt@x@\\\\|@Ff@Et@Ov@CjBCVIPBl@CBACKr@KZMz@g@`Be@dCCf@YbCEt@Gn@@l@GPkBNmB`@u@HkBLYJaAr@c@n@a@bAs@pAe@bAk@~AYd@c@`Aq@lAIHNSVUBME@GLG@NKUZoAxBi@f@GXQLSXo@f@g@Vo@Pw@`@m@HaAZKFk@fBw@jBSr@E^KHMF_AJq@Nq@DuAR}@HgBZiAGu@]i@?EJMdCBn@IxACfAEd@ED}A@iB`@kA@a@D[C}B?_BDaB]mAKwAEw@Ii@MeAEu@KcDo@iAYmBk@}DUsAAwAGeAFUCy@BIEMw@D_CEo@F{ADWC{@F[AiABcABa@A_@B[Am@G{@DmA?k@Da@CS@k@EgBBaADc@?QDuA?W@SGq@@e@EUCgCFc@@g@Hi@IiABuAKs@Ba@Ck@BYEi@DqAGcA?eB@YE]@k@GgA@[CQ@YE_@B_AG}B@}ACuABUEk@BcAEWAe@@]AcA@YIk@A_@KUCCO?UJe@H}@Xi@F}DfAuATcBR_A@[E}@?eADUAkDL}AAgBJc@?g@G_AJy@BsAE}BBg@BeBG{EPWDeA^_Bt@cBd@cAb@eCn@}Ah@uA^eBj@s@NcCx@eAZkANcACaAB_FQ{@Ia@?yCQc@?w@ECBAJDJVC\\\\HDJ?J\"\n            },\n            \"_id\": \"62694c88f198dc0373965997\",\n            \"id\": 3575008816,\n            \"resource_state\": \"2\",\n            \"external_id\": \"BAF7A805-19C3-40AE-ADEB-DFB5369F7DCB-activity.fit\",\n            \"upload_id\": 3816907102,\n            \"name\": \"Morning Ride\",\n            \"distance\": 12413.5,\n            \"moving_time\": 3222,\n            \"elapsed_time\": 3775,\n            \"total_elevation_gain\": 61.8,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-06-07T00:08:14.000Z\",\n            \"start_date_local\": \"2020-06-07T07:08:14.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.813171,\n                111.050927\n            ],\n            \"end_latlng\": [\n                -6.812619,\n                111.050677\n            ],\n            \"achievement_count\": 0,\n            \"kudos_count\": 1,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 3.853,\n            \"max_speed\": 7,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 23.7,\n            \"elev_low\": 10.7,\n            \"pr_count\": 0,\n            \"total_photo_count\": 1,\n            \"has_kudoed\": false,\n            \"workout_type\": 12,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a3565470352\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"rqqh@itxdTCCKJz@Nt@@dANt@AXDSB_BEuAI_@Gm@A_@DBVTF`@AJFC@EKy@BCSBGd@SD_@FPGDCG@DLFt@LdMh@`C?bAKlBg@b@SfDcAhAUxBw@`Be@rAWdDqA`Cy@hAWfDS|LAlEGfAGfC?hDMdADfBG|@KxB_@x@WlE_AZOh@MdBo@v@a@xAc@^Yf@OvCyAxCcAtHaApDExAF`@ClBF~CVlBJf@?AGDAn@PnGXhCBnD?dAEjCDjMG`LP|@Ph@RvDpBlEnBx@n@HJNr@^jER`Bf@xBT`@lAjAdApAPb@@XQnDAj@g@rCkApEQdAGbA_@|BEhABfCClBJhGChE]~JQzBC~@YlGG^?b@Er@BTOxCCvBz@vAPh@a@rKJjFI~BHf@b@jAATe@hCcAhEMt@C^@jAAfAOZa@b@GNYjEIRWFIN[nCBLDBdCLrA?HNITI|@mAzMe@fD_@jDMnCLnAAz@HZvAFr@I|@CTDBJ@l@a@|ACnA?zDEz@AbAMrBBf@CrAM~ADPTGtAM~@?`BQJu@C_ADKEl@?~@CPwAJCDAh@FVZNFLItEGdBFHz@@P`AC~@HxEEx@KHu@Lm@\\\\i@FMPMFkAGUBK`A{@tCOp@K|BMz@StDCZM`@cAUa@QcASkBu@mA]]Yf@cDb@}ATkAs@S_AIOMK?IQLM?IOTHCFTGGw@Pq@MGCKOe@GQBCZHnBIzAS|@EFsIiCqBs@}A_@s@[gEyA}FgBwGeCkAYsC_AwCgA_AWkIsCg@IuCiAaCu@sG}B{@_@cIiC_Bk@a@UiAa@}Ac@gAe@mFcBi@WWEkBm@aDkAyGyB{B{@iDcAyAi@sAk@kDeAWOUEsB{@q@OqBs@w@_@}C_AwDwAqA_@gAc@c@YcAc@QGY?i@Y_Cs@gBs@}Ae@aEaBw@ScEiBMMaAYwCqAuAe@eCeAi@O_Ae@wDwAs@Qg@[yBeAaCaABEBD?CWF]G{DaBaE}Ag@MuDeByFuBqAo@_@]PmAHeBPmAFaBZuD@s@HcAAg@L{@DoAXgBn@aJb@eE@cBA{@De@AUFeBNgCCy@@yALc@Dc@Ek@Mw@?k@Gc@r@wFDsBDe@BAT_DBaBHe@JsCHw@?o@FWLcCLeEKwB@s@IsABQBoAC]DaCRsBAi@P{Db@AlE^~ADzCW|C{@ZCvABzK`@dCTbEPjA@CEDQEE\"\n            },\n            \"_id\": \"62694c88f198dc0373965999\",\n            \"id\": 3565470352,\n            \"resource_state\": \"2\",\n            \"external_id\": \"CB9866CF-B4FA-40B7-8DA5-6A2B0F61A32F-activity.fit\",\n            \"upload_id\": 3806819725,\n            \"name\": \"Morning Ride\",\n            \"distance\": 20852.9,\n            \"moving_time\": 4613,\n            \"elapsed_time\": 6537,\n            \"total_elevation_gain\": 95,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-06-04T22:44:41.000Z\",\n            \"start_date_local\": \"2020-06-05T05:44:41.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.81258,\n                111.051098\n            ],\n            \"end_latlng\": [\n                -6.812474,\n                111.051161\n            ],\n            \"achievement_count\": 0,\n            \"kudos_count\": 1,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 4.52,\n            \"max_speed\": 9.7,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 23.7,\n            \"elev_low\": 7.3,\n            \"pr_count\": 0,\n            \"total_photo_count\": 1,\n            \"has_kudoed\": false,\n            \"workout_type\": 10,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a3557125783\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"nqqh@ktxdTAGPR_FI}Pw@mCB_FbAwCHeFYsB]qMqA{OqA_ZkFyDc@mAAcLqBqHa@mEe@cMw@kRc@{E_@gKUuEB{EQ{@OuHVwFB{GX{Ch@aA`A[jAwA|AaJhBqAMwC_A_@HQWeBo@_@CwAT_H|CmLjE{C|AkAXmCpAsL`E{EbCkCdAqDdA_DnBsCh@_Ct@cCnAaAbJi@`Ec@nIBjASv@m@fHJb@|@f@GdBSN{BSAUq@IGUPiATKb@HEI?NfARA`B{AAM|B{@jCa@`Fs@`E[dAMfBq@`EUlCe@rBIDg@fDI|Ak@bDwAjFAxAQfAOH}ADsDdAmAPs@RcF`B[jCEt@o@pBEj@@dF]xAeBzD{GfD?n@INgA~@q@z@mA`Co@tBUbCQd@iBfCeA~@_@t@Or@_AdA_AOaCiAuABiB^[j@In@_@f@eAhC_A~Cy@~A}@fAWz@Ez@aBhCa@jASX}Az@[^q@xAmBzDw@nAeAj@mBdBy@zCcBvCcBQ_@UaAUgBKiHuBS@Sl@O?fAoC|FuLhAeD|B}ExCwClCqAhAiAPy@MeFFiAzDiXjAuIDc@UQqGzBwJfCq@ZuF|Ak@^}@jBeAdBWLm@lBsAxAuAp@iBf@uIdDoD`Bo@d@sExAyEj@kMZwANkB?eFP}B^oGZoD@_Cj@yClCs@\\\\o@J{A?cFg@mDIcL{AKNCULK_B@oKm@GIDmBn@}F?gAcAoAiA}@u@]_@}@YuDJ{CjAeKRgFj@uFJ}Cp@oHz@aCD]KuAlByIfAuHNwB\\\\gHZqCJeCQgB}@oEk@sBgAuGqBcGiBwDUq@Ee@p@uGpBiLxB}PlCwMtAyKfBwJToDR_ALmBVgAT[|@?pATbAb@tN~EtAZjEfBtCv@jNvB`P`DrCV|J|A|Bp@zE`ArDlA~IdCpBnAxDzC|CbDv@j@jApA`D`E|@n@jDxDhEnDfGvDjPnHp@`@^`@bBj@dBd@xDd@zL`@rIl@xFXhKXjSlBJKJk@b@iGv@uGA_@JK|@I`GHjPj@d@{DvAwDJuBj@yBq@qDQuABe@~@w@`QoHvJwDnCuAjH_CdJgDdEoB?HjCaAp@Mp@HhG~Bh@Nn@?vHeBlAyAh@c@\\\\_Aj@m@nBc@xJ_@jBShC@tESzPl@df@rA`Oz@lNjAlFdA|CTrKdBzK|BlHbA|g@rExCK~EmAxVlApCD@YMARHHK\"\n            },\n            \"_id\": \"62694c88f198dc037396599b\",\n            \"id\": 3557125783,\n            \"resource_state\": \"2\",\n            \"external_id\": \"DBC1773B-F4CE-49B4-8E3D-6F0B7D3F2B2C-activity.fit\",\n            \"upload_id\": 3798057169,\n            \"name\": \"Afternoon Ride\",\n            \"distance\": 35813.6,\n            \"moving_time\": 7434,\n            \"elapsed_time\": 8701,\n            \"total_elevation_gain\": 104,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-06-03T08:30:29.000Z\",\n            \"start_date_local\": \"2020-06-03T15:30:29.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.812557,\n                111.051101\n            ],\n            \"end_latlng\": [\n                -6.812599,\n                111.051186\n            ],\n            \"achievement_count\": 0,\n            \"kudos_count\": 1,\n            \"comment_count\": 0,\n            \"athlete_count\": 2,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 4.818,\n            \"max_speed\": 10.1,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 58.6,\n            \"elev_low\": 4.4,\n            \"pr_count\": 0,\n            \"total_photo_count\": 1,\n            \"has_kudoed\": false,\n            \"workout_type\": 12,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a3544976953\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"neqh@}txdTe@I]KgA@sAC[@mCUk@AmAK]?[Dk@Ta@H_AXiAVy@@_AHiCIsCWU?eAIcDc@yH{@sMgAkB]u@G[GiAOyAW@`@AXY|@u@xDYvBGZKbACr@q@vDI~@?ROlAMtBMpAMl@MbBq@tEGx@GbAIt@GtAO|AKbG@pACV@LIdAGRCFGBq@CSBIBIXGBUJ_AFQH@LEp@Aj@KdACnBEZK\\\\AH?jAChAB`AHv@J\\\\@r@MRc@HoCPs@CWBSDYV[Pu@h@cAj@IJk@`@CJD`A@zA?fABdBEZGHK@ICwAu@e@_@q@]WIq@K}@IS?gAIcAM{@MiAUkBQWAgCWyAWGEgDYgJmA}D_@wCa@}E]eBUKC_@E_@?}@Q_@EW?WEoAMkACgAQa@Oq@Gm@CeEg@e@IQG]Ag@@{BW_AQi@CeIeAaBQmAUqCYiAQs@EeCc@kD_@uA[oAMeCc@_AEiAQeBQuAUcBQ{Di@cG_AK??Dk@GeADiARUFiBRg@?OBe@@yAP]A]D{ACeAD_AEgC?QC_@@{ACs@F_@Ha@Ic@Du@CK@aAIgA@_@CkA@SEYAMFCLQXCLOz@AVIh@KR?CECIB\"\n            },\n            \"_id\": \"62694c88f198dc037396599d\",\n            \"id\": 3544976953,\n            \"resource_state\": \"2\",\n            \"external_id\": \"DF1711C8-0446-4408-AA2A-F7DD39D09EBC-activity.fit\",\n            \"upload_id\": 3785178121,\n            \"name\": \"Ngopi Pagi\",\n            \"distance\": 8031.8,\n            \"moving_time\": 1540,\n            \"elapsed_time\": 1587,\n            \"total_elevation_gain\": 15.8,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-06-01T01:45:03.000Z\",\n            \"start_date_local\": \"2020-06-01T08:45:03.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.810635,\n                111.051195\n            ],\n            \"end_latlng\": [\n                -6.755655,\n                111.03862\n            ],\n            \"achievement_count\": 1,\n            \"kudos_count\": 1,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 5.215,\n            \"max_speed\": 10,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 13.9,\n            \"elev_low\": 4.3,\n            \"pr_count\": 1,\n            \"total_photo_count\": 1,\n            \"has_kudoed\": false,\n            \"workout_type\": 12,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a3539061818\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"nqqh@ktxdT?f@Yq@AJLCCFg@J_Pu@{HQmE~@gDVqJu@qKmAwDUECLAXFIAIYc@Gg@FmHe@gJwAAj@m@bCqAtICr@[dAk@xDCdAe@pF]`CQpCYlBu@fKD~BIdAMlESPcAKMDETUHoBFBh@AbAO|@@~BOz@@p@Gt@HpCTdC}AJsD?y@j@u@r@kAr@gAh@ETDV?j@NdAExALb@?d@At@QL]GiB{Ak@Y}A_@eDKgRcCFCkF]mFo@oGi@kJmAqJcAq@AmB]cBGmC[gW}CuGcA_D[}IqAsGw@w@SeCQwJiAuFcAuACeC\\\\aIt@uBEkDFcGA{KOoAFcBSaGWo@h@u@NgCUc@WK[Ci@Hs@JOnBFlBVP`@@r@Ql@]N_@FaAGWSDMLK|@NFLZA@}@Do@g@AgBSGBKj@G@CIGHWCNRJ^d@?RJMvAw@hEMpAq@jCa@rCS~Bm@lCO~@i@tBWrBAj@e@hBe@lDg@pBaAhHm@|CUd@OJaBNsBb@qBt@w@D{EjBiDh@eCt@y@^sCx@m@`@uB`@y@b@uAVu@T}Al@qBb@{@^o@Du@Ps@\\\\c@FmAh@}BZmAd@_@@SKAa@HWlA[dAE^KCiFq@EyAJuEA@nBEvABx@JFfBIl@HNH@\\\\JJxD_A~@YDKAq@}A_JUoB@s@Hk@Ak@PwABo@]oC?eAF}@b@{BE{BEq@Bu@GiCD_AK_DE_D@kAMcDDcBMkDJyACuAHc@H}AHSj@C|@JnACfBNz@?`@NxBDdHd@hEd@|G`@fEPfBXfBL`C^nA\\\\hFj@dDr@bBJh@RhAFvFvAvBZ`B^CJDJIEAFRDEABQX}@x@sE@o@LYDa@v@wDBw@HCDKJy@?[TyAAo@XwA@m@^sAh@yDRy@J}AVqAHsAXcBt@{BP}@JW@MGe@b@qB?s@a@qEA_@Sg@?OjD_BnCkA`Cy@nAq@hAYtCiAN?nFeCfDkA`By@tBo@fCkAhDuAjJsDjBo@^Gz@BrHdCnAEdAMzEiAvA}AxAwBZ[b@QhAOpHg@dHIpDQfE?vAJf@ACDHNh@FtMJtCPhNZlHVhFVvB^~Lj@pKhApGdAdB`@X?d@PbD`@bCj@hDb@lBd@fOvB~Kv@rAVlBHbHt@jARpEZl@@lAGtCi@pAc@~@IrDXjA@~BPjEPdBPbDB@KNI@QEFDD\"\n            },\n            \"_id\": \"62694c88f198dc03739659a1\",\n            \"id\": 3539061818,\n            \"resource_state\": \"2\",\n            \"external_id\": \"7BC9CEB0-4C70-4C3B-8AA3-3AF70F57E044-activity.fit\",\n            \"upload_id\": 3778816806,\n            \"name\": \"Morning Ride\",\n            \"distance\": 24060.7,\n            \"moving_time\": 5817,\n            \"elapsed_time\": 9019,\n            \"total_elevation_gain\": 49.8,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-05-31T00:18:51.000Z\",\n            \"start_date_local\": \"2020-05-31T07:18:51.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.812557,\n                111.051102\n            ],\n            \"end_latlng\": [\n                -6.812514,\n                111.051178\n            ],\n            \"achievement_count\": 3,\n            \"kudos_count\": 1,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 4.136,\n            \"max_speed\": 10.1,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 23.1,\n            \"elev_low\": 4.3,\n            \"pr_count\": 1,\n            \"total_photo_count\": 0,\n            \"has_kudoed\": false,\n            \"workout_type\": 12,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a3482157646\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"nqqh@mtxdT?KCA@BDEIFG??FAAWN[@yBEsF_@kACqGYaCGu@DREtAA^Dt@@fCLtALt@Ax@Hp@?nBLp@JhELL?FUOQHB?C@B\"\n            },\n            \"_id\": \"62694c88f198dc0373965993\",\n            \"id\": 3482157646,\n            \"resource_state\": \"2\",\n            \"external_id\": \"BEBA0AE1-8E13-4FF3-93B4-50AE8D6D84B5-activity.fit\",\n            \"upload_id\": 3718706294,\n            \"name\": \"Evening Ride\",\n            \"distance\": 1100.2,\n            \"moving_time\": 272,\n            \"elapsed_time\": 376,\n            \"total_elevation_gain\": 10.8,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-05-20T12:45:04.000Z\",\n            \"start_date_local\": \"2020-05-20T19:45:04.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.812558,\n                111.051112\n            ],\n            \"end_latlng\": [\n                -6.812507,\n                111.051185\n            ],\n            \"achievement_count\": 0,\n            \"kudos_count\": 1,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 4.045,\n            \"max_speed\": 7.6,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 17.8,\n            \"elev_low\": 11.2,\n            \"pr_count\": 0,\n            \"total_photo_count\": 0,\n            \"has_kudoed\": false,\n            \"workout_type\": 10,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a3443613560\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"zjqh@gtxdTWDaBSa@Ai@Bc@IsBKs@I}EU}@Cg@D_Cp@eAPyBPyAAmD[g@C{Ek@iDQiC][IeBKiIw@e@IsAIgHgACXQn@]pBCZc@dBa@tDM`@aAhGEvAG`AA|@CFKvBg@pCKrBm@rF?d@Gv@?fAMvABhAIfB?`AKlD?DHBj@Al@Bj@C|@@~BSR?NFJb@Jp@JxA@t@Dt@?nAGn@@h@Hx@AfABP?|@Dv@CJIBaAFeA?UBGJAP@H?\\\\IjA@t@QxB?X?B?AGBA?BF?TIRMjAMj@D@GAXFGd@DPGPFED@CAO\\\\E?DEEd@[j@Sr@Kl@Ef@IRAZMx@St@Gr@BN`@Vr@XLJn@N~Ah@xCjAr@Xv@f@v@XTDr@X|@b@dA^jB|@l@PvB`ATFx@b@vChArAn@b@JzAj@t@d@p@RZPdC`Ax@RzAr@`EpA\\\\LRR`A\\\\bAd@l@PrAr@z@Zf@Lf@V^Ht@^tE`BhAd@ZRj@Pf@Td@HfAf@v@VvBbA`@Ll@XfC~@b@LfCjAtAb@lB`Aj@HnBr@d@X`AT`A^v@Pn@R~DbBfDhAbFrBvGpBp@^|@Rv@\\\\`AXb@TzCdAx@\\\\~A`@pAj@tA`@n@NhAd@vBd@`A\\\\z@b@hA^^BHa@JuADYB{@Fe@NgA@a@ViCBy@Fi@?WFs@d@yBAc@J{ABONU\\\\cB^wERmAF}@XuBT_DBsAHkA@m@Pw@Bg@No@Hm@JWB]HWHuAAYBWAW`@kCJmCVkABkATgANiAD_ADUF}@?WRaBA{@NyBAM?sAHcACWESHsDKoAJaABeAAs@Gc@Dw@Cm@Fg@AcCDa@CM@@GGILGB^`@XPL?SUNGAA?Gk@_@?GB?KsC?k@LaBH}B?_BB]FKDiC@}@EsAGo@C_BDsGDOBSMkGAwJM}BFcB?_AEYCm@D_@C_@By@GqAF}@AYI]BWGiDFSMmA?}@EUDQKcA@YIg@AEM@qAVk@PeB^mDdAeBTsABo@Cg@?qERyA@_@EaA?{@HuAGiAHo@CsBJoAKq@DwAAo@Dw@Lo@?m@Fg@AeB`@]RwBz@o@No@ZyAX]Nq@NkA^s@N_Cx@qBf@}Al@uAZqANeA?iAMW@i@IwADkBQsEUQG?EIIAGHGCCBE\"\n            },\n            \"_id\": \"62694c88f198dc037396599f\",\n            \"id\": 3443613560,\n            \"resource_state\": \"2\",\n            \"external_id\": \"EDD03B86-B31D-481F-A4D4-8306228641F1-activity.fit\",\n            \"upload_id\": 3678204647,\n            \"name\": \"Afternoon Ride\",\n            \"distance\": 14728.7,\n            \"moving_time\": 3454,\n            \"elapsed_time\": 4639,\n            \"total_elevation_gain\": 25.8,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-05-13T08:38:55.000Z\",\n            \"start_date_local\": \"2020-05-13T15:38:55.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.811494,\n                111.051087\n            ],\n            \"end_latlng\": [\n                -6.812438,\n                111.051181\n            ],\n            \"achievement_count\": 0,\n            \"kudos_count\": 0,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 4.264,\n            \"max_speed\": 10.1,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 16.8,\n            \"elev_low\": 4.7,\n            \"pr_count\": 0,\n            \"total_photo_count\": 0,\n            \"has_kudoed\": false,\n            \"workout_type\": 10,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        },\n        {\n            \"athlete\": {\n                \"id\": 56106588,\n                \"resource_state\": 1\n            },\n            \"map\": {\n                \"id\": \"a3438282930\",\n                \"resource_state\": 2,\n                \"summary_polyline\": \"tqgh@}pxdTs@`Aw@\\\\oD^oA\\\\Gd@u@CsBvBl@I_CyAiFfDd@t@N@SRTQk@d@gIdBcAf@cAj@ASmBtFC^l@~@KpAJRe@pAEx@gAvA`@APtDSjAgAt@z@pA?^GjA_@Zk@~BfAn@u@h@l@@uA|An@bAoB{@{Bb@HyArA{ARq@}BnAs@Ii@u@eAAy@wA_CZQz@_A]Cs@iBNiEgAyAm@q@@o@b@uD?QQiAMiATgCw@kAZYMqAJoAIy@{@yA\\\\aF[kAt@g@o@gAW}@k@uBMr@xNe}B{rAnzBrnAGzBXNX|@oAfBKjAHh@WhAAp@ICbAdD_@`Ai@f@PlDNRFlETbAf@LzBs@k@HnDs@|DzAvB}DTt@pBK`ARdDWZ]PFfBc@lAm@q@TnD?pB`@d@n@\\\\e@r@GRx@VC^eBYgA\\\\uBx@}BKqAFq@@w@Pc@t@StAJvAd@tBNdAn@hC?|@h@jAJxAI`DnApCTRHkGf@jHdBnDmDKoBFi@f@i@NgA{IbVjK{[jAwG`@wFj@gAE[n@aF?J[e@v@}Cz@qAdAeGAaAhAcCk@B{@y@j@}@QaBe@gADZDImDbA~H}OzBbI|AiB|@AZk@ODA`@fCi@h@{@lAY|@DpAsBrDXz@gApNqCxEeEL^Rw@GFpNkCwm@q~Cbo@f_D~@Hft@vV{p@{RNLpCkCzCCAYlC_BjA_B?g@X[KNhHaAMCJB~HYd@BhANtBEj@w@nAp@fB{@r@MMTbHzAhMoPxHlL_@pC\\\\i@zAQ~DmC_@TvUrGpIm@nADxDzAGGbFuCgGhDPI~b@lIhE_AhDx@Lx@c@d@AKdIPE\\\\fBf@uJ_DlNpDrAk@JRdBh@iUkEda@nFGZ}`@kGjg@lG~UqAn@h@bWdAeUs@nFFtJa@iKl@zHXzECg@HjEr@aCa@tPOkBv@nLaFo@PzDAfEkCdCIbDcBxAMlLb@jGu@hI?qA[pJMt@\\\\pCg@b@c@n@Vj@a@ok@|A|n@_EG^{@YlBE}@@TAs@Dd@CATt@UmA@r@D}@?fBIqA?LF]UFRn@J[XHa@SGeEjCMSaDf@Y^qGA~PoMmU|LyCBAPsKbA|f@wOwd@jOcNKp@UaBTJ[sCnBsAGUt@JXaAWu@?{CrBmEHuDnBk@p@UIiCZFVkA_@wAAkEx@{CiB\\\\jBGiBwIL\"\n            },\n            \"_id\": \"62694c88f198dc0373965995\",\n            \"id\": 3438282930,\n            \"resource_state\": \"2\",\n            \"external_id\": \"bc60e4dc-6e00-4597-bbd3-4cc3ed161cb2-activity.fit\",\n            \"upload_id\": 3672630448,\n            \"name\": \"Afternoon Ride\",\n            \"distance\": 24937,\n            \"moving_time\": 3880,\n            \"elapsed_time\": 4325,\n            \"total_elevation_gain\": 23.3,\n            \"type\": \"Ride\",\n            \"start_date\": \"2020-05-12T08:46:34.000Z\",\n            \"start_date_local\": \"2020-05-12T15:46:34.000Z\",\n            \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n            \"utc_offset\": 25200,\n            \"start_latlng\": [\n                -6.761389,\n                111.050558\n            ],\n            \"end_latlng\": [\n                -6.811603,\n                111.050958\n            ],\n            \"achievement_count\": 0,\n            \"kudos_count\": 1,\n            \"comment_count\": 0,\n            \"athlete_count\": 1,\n            \"photo_count\": 0,\n            \"trainer\": false,\n            \"commute\": false,\n            \"manual\": false,\n            \"private\": false,\n            \"flagged\": false,\n            \"gear_id\": null,\n            \"from_accepted_tag\": false,\n            \"average_speed\": 6.427,\n            \"max_speed\": 29.3,\n            \"device_watts\": false,\n            \"has_heartrate\": false,\n            \"elev_high\": 19.3,\n            \"elev_low\": 4.4,\n            \"pr_count\": 0,\n            \"total_photo_count\": 0,\n            \"has_kudoed\": false,\n            \"workout_type\": 12,\n            \"suffer_score\": null,\n            \"partner_brand_tag\": null,\n            \"splits_metric\": [],\n            \"segment_efforts\": [],\n            \"highlighted_kudosers\": [],\n            \"__v\": 0\n        }\n    ],\n    \"message\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/v1/activities/6791010788",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"v1",
+								"activities",
+								"6791010788"
+							]
+						},
+						"description": "This endpoint is used to fetch activity by id from system"
+					},
+					"response": [
+						{
+							"name": "Get By Id Activity OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{jwt_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{endpoint}}/v1/activities/6791010788",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"v1",
+										"activities",
+										"6791010788"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2285"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8ed-U4wOOnI6rg47HSl2X7WCx9K84tg\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Apr 2022 04:44:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"response\": {\n        \"athlete\": {\n            \"id\": 56106588,\n            \"resource_state\": 1\n        },\n        \"map\": {\n            \"id\": \"a6791010788\",\n            \"resource_state\": 2,\n            \"summary_polyline\": \"xqqh@{qxdTHDQKGKGAK@YCEE@OCADM^I@IGE@BC?AIF@QIH@C@@@CCE@N@GCD?@DEDQ??@JDX?D@AJFD\\\\BLDTAVFPAjBNtA@x@FV?d@F|CDhBGVIJAbA]XG~@_@~@W|@Qp@WFAXKlA[rBs@n@MJIl@MlBs@VEVMnAc@TK`A]hAOxDSzB@HBHCp@@b@APCfDCZ@nAE^@h@C^@jBCnFO|@Az@@zAC|AWnBc@d@KJ?XM~Cy@f@S`@GJBJHBNJVBPRnJ@pIDz@ArCB~@?bCBnBBX@`BCn@BzAC~@?`DDjGAp@@xAC|@@~BC|AFl@EdC@NCpA@PEd@?pBInC@~B?tAC^@bBAH@HCrD@DDFEH@`@CT@nAAjFCnACHBHCl@@rAERDh@Gt@@JE\\\\?LOfBENBNEv@Kh@OrACj@UzAItAOt@Il@KnACJEl@UnBKxAy@bHWzCMp@OtBe@pDKxASxAEt@{@pH?TKhAEZC@DBC@HDIGFBDJEEKACCB@?K?FA?DBEGEN@TIx@C~@Kj@m@zFCJCXUvA?RUxA?NCDSFSGoHoCmA[qCeAuC{@qBu@y@U]Qk@OeBm@WOWEoBu@KAMEuDuAkA]WMqBq@u@[kA_@cAa@gEmA_G}Bo@QkCeAMIMAYMeA]qCiAWGoAe@iDuAc@WsAc@oBy@SMq@S_CcAMCe@WyAe@i@W_HoCUKcA]GG{@WaDsAgAg@gAa@iAg@}Ak@eAe@a@MiDuAyBw@qB{@GEu@[QMQEAWDQRqBF}AFc@VkEDWFgA@g@NuBDcANeBNoANsB@c@NoAh@sGBeDBWBgBFe@JsDEq@R_COiAIQBc@CQ?a@@[F[BYDKHi@PcB?YBYFkABM@k@DQDo@FYAKDYAMLgA?k@Di@?YNkB?_@Hi@?a@Fo@BuAJ_BC_@Bu@C{@Bu@OeCD}@CUDe@?_ABEAID_@CUDsANqCBeAJ}@JIr@CXFHAb@JrARnBJnBOn@Iz@S~@UHITIn@Ed@BHAzAJnCJfBHnA?|BRdGZ^A?EDGCC@AHFa@Q^AK??CEBCAFA@BC^CABC\"\n        },\n        \"_id\": \"62694c87f198dc0373965967\",\n        \"id\": 6791010788,\n        \"resource_state\": \"2\",\n        \"external_id\": \"5ABA701E-1ED7-4547-AD35-3BD03A521961-activity.fit\",\n        \"upload_id\": 7223788182,\n        \"name\": \"Afternoon Ride\",\n        \"distance\": 13270,\n        \"moving_time\": 2734,\n        \"elapsed_time\": 2916,\n        \"total_elevation_gain\": 13.2,\n        \"type\": \"Ride\",\n        \"start_date\": \"2022-03-08T09:23:08.000Z\",\n        \"start_date_local\": \"2022-03-08T16:23:08.000Z\",\n        \"timezone\": \"(GMT+07:00) Asia/Jakarta\",\n        \"utc_offset\": 25200,\n        \"start_latlng\": [\n            -6.812605541199446,\n            111.05069979093969\n        ],\n        \"end_latlng\": [\n            -6.812436645850539,\n            111.05102961882949\n        ],\n        \"achievement_count\": 0,\n        \"kudos_count\": 0,\n        \"comment_count\": 0,\n        \"athlete_count\": 1,\n        \"photo_count\": 0,\n        \"trainer\": false,\n        \"commute\": false,\n        \"manual\": false,\n        \"private\": false,\n        \"flagged\": false,\n        \"gear_id\": null,\n        \"from_accepted_tag\": false,\n        \"average_speed\": 4.854,\n        \"max_speed\": 10.332,\n        \"average_watts\": 71.5,\n        \"kilojoules\": 195.5,\n        \"device_watts\": false,\n        \"has_heartrate\": false,\n        \"elev_high\": 18.3,\n        \"elev_low\": 6.8,\n        \"pr_count\": 0,\n        \"total_photo_count\": 0,\n        \"has_kudoed\": false,\n        \"workout_type\": 12,\n        \"suffer_score\": null,\n        \"partner_brand_tag\": null,\n        \"splits_metric\": [],\n        \"segment_efforts\": [],\n        \"highlighted_kudosers\": [],\n        \"__v\": 0\n    },\n    \"message\": null\n}"
+						},
+						{
+							"name": "Get By Id Activity Invalid JWT Token",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "asdasda",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{endpoint}}/v1/athletes/102063983",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"v1",
+										"athletes",
+										"102063983"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4b-qakh6MnrviHJOGElvhSDcbGVk6g\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Apr 2022 04:39:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"response\": null,\n    \"message\": \"jwt token not valid or expired\"\n}"
+						},
+						{
+							"name": "Get By Id Activity No JWT Token",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{jwt_token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{endpoint}}/v1/athletes/102063983",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"v1",
+										"athletes",
+										"102063983"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"49-f5Z4CNbjcil2rs9wnvS9PqUV3G8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Apr 2022 04:38:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"response\": null,\n    \"message\": \"authorization: Invalid value\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/v1/activities/6791010788",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"v1",
+								"activities",
+								"6791010788"
+							]
+						},
+						"description": "This endpoint is used to delete activity by id from system"
+					},
+					"response": [
+						{
+							"name": "Delete By Id Activity Invalid JWT Token",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "asdasda",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{endpoint}}/v1/athletes/102063983",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"v1",
+										"athletes",
+										"102063983"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4b-qakh6MnrviHJOGElvhSDcbGVk6g\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Apr 2022 04:39:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"response\": null,\n    \"message\": \"jwt token not valid or expired\"\n}"
+						},
+						{
+							"name": "Delete By Id Activity No JWT Token",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{jwt_token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{endpoint}}/v1/athletes/102063983",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"v1",
+										"athletes",
+										"102063983"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"49-f5Z4CNbjcil2rs9wnvS9PqUV3G8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Apr 2022 04:38:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"response\": null,\n    \"message\": \"authorization: Invalid value\"\n}"
+						},
+						{
+							"name": "Delete By Id OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{jwt_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{endpoint}}/v1/activities/6791010788",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"v1",
+										"activities",
+										"6791010788"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "80"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"50-cHFuDOkVgqHsMw7g72ZWnGLLpL4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Apr 2022 04:47:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"response\": {\n        \"acknowledged\": true,\n        \"deletedCount\": 1\n    },\n    \"message\": null\n}"
+						}
+					]
+				}
+			],
+			"description": "This endpoint group contain all activity endpoint service",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Sync",
+			"item": [
+				{
+					"name": "Sync",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/v1/sync",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"v1",
+								"sync"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "This endpoint group contains all sync endpoint",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
