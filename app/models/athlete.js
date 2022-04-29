@@ -7,11 +7,12 @@ const AthleteSchema = new mongoose.Schema({
   },
   username: {
     type: String,
-    required: true,
+    required: false,
+    default: null
   },
   firstname: {
     type: String,
-    required: true,
+    required: false,
   },
   lastname: {
     type: String,
@@ -19,7 +20,8 @@ const AthleteSchema = new mongoose.Schema({
   },
   sex: {
     type: String,
-    required: true,
+    required: false,
+    default: null
   },
   premium: {
     type: Boolean,

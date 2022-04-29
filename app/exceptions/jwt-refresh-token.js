@@ -10,7 +10,7 @@ class JwtRefreshError extends Error {
 
     Error.captureStackTrace(this, this.constructor);
 
-    this.code = 401;
+    this.status = 401;
   }
 }
 
